@@ -6,14 +6,15 @@
 2. [Prerequisiti](#prerequisiti)
 3. [Concetti Base](#concetti-base)
 4. [Setup Iniziale](#setup-iniziale)
-5. [Creare uno Shared Album](#creare-uno-shared-album)
-6. [Configurare la Keyword in Lightroom](#configurare-la-keyword-in-lightroom)
-7. [Configurazione Metadati per Shared Albums](#configurazione-metadati-per-shared-albums)
-8. [Pubblicare Foto nello Shared Album](#pubblicare-foto-nello-shared-album)
-9. [Gestire e Modificare Shared Albums](#gestire-e-modificare-shared-albums)
-10. [Best Practices](#best-practices)
-11. [Troubleshooting](#troubleshooting)
-12. [FAQ - Domande Frequenti](#faq---domande-frequenti)
+5. [Creare una Published Collection](#creare-una-published-collection)
+6. [Creare uno Shared Album](#creare-uno-shared-album)
+7. [Configurare la Keyword in Lightroom](#configurare-la-keyword-in-lightroom)
+8. [Configurazione Metadati per Shared Albums](#configurazione-metadati-per-shared-albums)
+9. [Pubblicare Foto nello Shared Album](#pubblicare-foto-nello-shared-album)
+10. [Gestire e Modificare Shared Albums](#gestire-e-modificare-shared-albums)
+11. [Best Practices](#best-practices)
+12. [Troubleshooting](#troubleshooting)
+13. [FAQ - Domande Frequenti](#faq---domande-frequenti)
 
 ---
 
@@ -146,6 +147,295 @@ Se il metodo automatico non funziona:
 4. Nome: `Shared Albums` → Salva
 5. Click destro su `Shared Albums` → **Create Keyword Tag**
 6. Nome: `<Nome esatto del tuo Publish Service>` → Salva
+
+---
+
+## Creare una Published Collection
+
+### Quando È Necessario
+
+Prima di poter gestire Shared Albums, devi avere una **Published Collection** configurata. Una Published Collection è il container in Lightroom che tiene traccia delle foto pubblicate sul NAS.
+
+**Quando crearla:**
+- ✅ Prima volta che usi il plugin per pubblicare foto
+- ✅ Quando vuoi organizzare foto in gruppi logici separati
+- ✅ Per ogni "progetto" o categoria di foto distinta
+
+**Nota**: Puoi avere multiple Published Collections nello stesso Publish Service.
+
+### Creare la Collection
+
+1. Pannello **Publish Services** (a sinistra in Library)
+2. Espandi il tuo **Publish Service** di Photo StatLr
+3. **Click destro** sul Publish Service → **Create Published Collection...**
+4. Si apre il dialog di configurazione
+
+![Dialog Create Published Collection](../Screenshots-Mac/screenshot-create-published-collection.png)
+
+### Configurazione della Published Collection
+
+#### 1. Nome della Collection
+
+```
+Nome: collezione_di_prova
+```
+
+- Nome descrittivo in Lightroom (es: "Famiglia 2024", "Portfolio Clienti")
+- **Non** influenza il nome delle cartelle sul NAS
+
+**☑ Imposta come raccolta di destinazione**
+- Rende questa collection il target per "Go to Target Collection" (`Cmd+Alt+Shift+B`)
+- Consiglio: attiva solo per la collection principale
+
+#### 2. Target Album (Configurazione Critica!)
+
+```
+Target Album: cartella_di_prova
+☑ Create Album, if needed
+```
+
+**Target Album**: `cartella_di_prova`
+
+Questo è il **percorso della cartella fisica** sul NAS dove verranno caricate le foto.
+
+**Esempi di percorsi:**
+```
+"Famiglia/2024"              → /photo/Famiglia/2024/
+"Viaggi/Europa/Italia"       → /photo/Viaggi/Europa/Italia/
+"Portfolio/{Date YYYY}"      → /photo/Portfolio/2024/
+"{LrCC:path}"                → Replica struttura Collection Lr
+```
+
+**☑ Create Album, if needed** ← **IMPORTANTE!**
+
+✅ **Cosa fa**: Crea automaticamente la **cartella fisica** sul NAS se non esiste
+❌ **Cosa NON fa**: NON crea uno Shared Album (album virtuale)
+
+**⚠️ Attenzione alla Confusione Terminologica:**
+
+Il termine "Album" nel plugin può significare cose diverse:
+- In **Photo Station**: Album = cartella fisica
+- In **Synology Photos**: Album = collezione virtuale
+- In questo contesto: **"Create Album" = crea cartella fisica**
+
+**Per creare Shared Albums** (album virtuali condivisi) devi usare le **keywords**, come spiegato nelle sezioni successive!
+
+#### 3. Struttura Upload
+
+**○ Flat Copy** (consigliato per Shared Albums)
+```
+Tutte le foto in un'unica cartella piatta
+```
+
+**Esempio:**
+```
+Lightroom (struttura locale):     Synology NAS:
+├── 2024/                        cartella_di_prova/
+│   ├── 01-Gennaio/              ├── IMG_001.jpg
+│   │   └── IMG_001.jpg          ├── IMG_002.jpg
+│   └── 02-Febbraio/             └── IMG_003.jpg
+│       └── IMG_002.jpg
+```
+
+**○ Mirror Tree relative to:**
+```
+Replica la struttura di cartelle locali
+```
+
+**Esempio (con root: /Users/lorenzo/Photos):**
+```
+Lightroom:                       Synology NAS:
+/Users/lorenzo/Photos/           cartella_di_prova/
+├── 2024/                        └── 2024/
+│   ├── 01-Gennaio/                  ├── 01-Gennaio/
+│   │   └── IMG_001.jpg              │   └── IMG_001.jpg
+│   └── 02-Febbraio/                 └── 02-Febbraio/
+│       └── IMG_002.jpg                  └── IMG_002.jpg
+```
+
+**☐ Sort Photos**
+- Ordina le foto per data di scatto
+- Utile solo con **Flat Copy**
+
+#### 4. Target Photo Naming Options
+
+**☐ Rename To:**
+```
+Rinomina le foto durante l'upload
+Supporta placeholder: {Date}_{Filename}_{Sequence}
+```
+
+**☐ RAW+JPG to same Album**
+```
+Carica RAW e JPG nella stessa cartella
+Utile per workflow RAW+JPG
+```
+
+#### 5. Metadata Upload Options (Lr → NAS)
+
+Queste opzioni determinano quali metadati vengono **caricati** da Lightroom verso Synology Photos.
+
+**Configurazione consigliata per Shared Albums:**
+
+| Opzione | Consiglio | Motivo |
+|---------|-----------|--------|
+| **☑ Keywords (always)** | ✅ **SÌ** | **Obbligatorio** per Shared Albums! Le keywords vengono usate per assegnare foto agli album |
+| **☑ Description (always)** | ✅ Sì | Titoli e descrizioni visibili su Synology |
+| **☑ Rating (always)** | ✅ Sì | Stelle visibili in Synology Photos |
+| **☐ Color Label Tag** | ❌ No | Non necessario (converte label in tag) |
+| **☐ Rating Tag** | ❌ No | Non necessario (hai già Rating) |
+| **☑ Comments (always)** | ⚠️ Opzionale | Commenti privati (uso interno) |
+
+**⚠️ Critico**: `Keywords (always)` **deve** essere attivo per Shared Albums!
+
+#### 6. Metadata Download Options (NAS → Lr)
+
+Queste opzioni determinano quali metadati vengono **scaricati** da Synology Photos verso Lightroom.
+
+**Per sincronizzazione unidirezionale** (Lr → NAS solo):
+```
+☐ Tags/Keywords      → Disattivato
+☐ Description        → Disattivato
+☐ Rating             → Disattivato
+```
+
+**Per sincronizzazione bidirezionale** (Lr ↔ NAS):
+```
+☑ Tags/Keywords      → Se aggiungi tag su Synology
+☑ Description        → Se modifichi descrizioni su Synology
+☑ Rating             → Se valuti foto su Synology
+```
+
+**⚠️ Nota**: Download funziona solo in **Publish Mode: CheckExisting** o **MetadataUpload**
+
+#### 7. Metadata Download & Publish Mode
+
+```
+Metadata Download:  Yes (enabled)    ← Abilita download metadati
+Publish Mode:       Upload: Normal   ← Modalità normale
+```
+
+**Metadata Download: Yes/No**
+- `Yes` = Abilita sincronizzazione NAS → Lr
+- `No` = Solo Lr → NAS (unidirezionale)
+
+**Publish Mode: Upload**
+- Modalità predefinita per nuovo publishing
+- Altri mode disponibili dopo il primo upload
+
+### Configurazione Raccomandata Completa
+
+**Per Shared Albums pubblici (unidirezionale):**
+
+```
+Nome: Album_Pubblico_2024
+☑ Imposta come raccolta di destinazione
+
+Target Album: Album_Pubblico_2024
+☑ Create Album, if needed
+○ Flat Copy
+☐ Sort Photos
+
+Metadata Upload:
+☑ Keywords (always)        ← CRITICO!
+☑ Description (always)
+☑ Rating (always)
+☐ Color Label Tag
+☐ Rating Tag
+☐ Comments (always)
+
+Metadata Download:
+☐ Tags/Keywords
+☐ Description
+☐ Rating
+
+Metadata Download: No (disabled)
+Publish Mode: Upload
+```
+
+**Per archivio personale (bidirezionale):**
+
+```
+Nome: Archivio_Personale
+☑ Imposta come raccolta di destinazione
+
+Target Album: {LrCC:path}      ← Replica struttura Lr
+☑ Create Album, if needed
+○ Mirror Tree relative to: /Users/tuo_nome/Photos
+☐ Sort Photos
+
+Metadata Upload:
+☑ Keywords (always)
+☑ Description (always)
+☑ Rating (always)
+☑ Comments (always)
+
+Metadata Download:
+☑ Tags/Keywords             ← Sincronizza tag
+☑ Description               ← Sincronizza descrizioni
+☑ Rating                    ← Sincronizza rating
+
+Metadata Download: Yes (enabled)
+Publish Mode: Upload
+```
+
+### ⚠️ Errori Comuni da Evitare
+
+#### ❌ Errore 1: Confondere "Create Album" con "Shared Album"
+
+```
+"Create Album, if needed"   → Crea SOLO cartella fisica sul NAS
+                             NON crea Shared Album!
+
+Per Shared Albums:          → Usa keywords (sezione 6-7)
+```
+
+#### ❌ Errore 2: Keywords disattivate
+
+```
+☐ Keywords (always)         → Shared Albums NON funzioneranno!
+
+Soluzione:                  → ☑ Keywords (always) OBBLIGATORIO
+```
+
+#### ❌ Errore 3: Mirror Tree senza path root
+
+```
+○ Mirror Tree relative to:  [vuoto]
+                            → Errore durante publish!
+
+Soluzione:                  → Specifica path completo oppure usa Flat Copy
+```
+
+#### ❌ Errore 4: Metadata Download attivo senza selezioni
+
+```
+Metadata Download: Yes
+Ma tutte le opzioni deselezionate → Non scarica nulla!
+
+Soluzione:                  → Seleziona almeno una opzione o disattiva
+```
+
+### Dopo Aver Creato la Collection
+
+Una volta creata la Published Collection:
+
+1. ✅ La collection appare nel pannello **Publish Services**
+2. ✅ Puoi trascinare foto dalla Library nella collection
+3. ✅ Le foto vanno in stato **"New Photos to Publish"**
+4. ✅ Clicca **Publish** per uploadarle
+5. ✅ Ora sei pronto per creare Shared Albums (sezione 6)
+
+### Modificare una Published Collection Esistente
+
+Per modificare le impostazioni:
+
+1. Pannello **Publish Services**
+2. Click destro sulla **Published Collection** → **Edit Settings...**
+3. Modifica le opzioni desiderate
+4. Clicca **Save**
+
+**⚠️ Nota**: Alcune modifiche (es: Target Album) richiedono ri-pubblicazione delle foto.
 
 ---
 

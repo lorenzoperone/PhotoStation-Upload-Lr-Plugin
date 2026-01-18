@@ -65,7 +65,9 @@ My*
 Documentation/API
 
 # ============
-# Temporary screenshots
+# Temporary screenshots (case-sensitive)
 # ============
-Screenshot*.png
+# Ignora solo screenshot con spazi (format macOS)
+Screenshot*alle*.png
+# Ignora HTML preview generati
 Documentation/*.html
