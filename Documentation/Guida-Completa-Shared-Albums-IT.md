@@ -692,6 +692,34 @@ Per conformità GDPR quando condividi foto pubblicamente:
 
 ## Pubblicare Foto nello Shared Album
 
+### ⚠️ IMPORTANTE: Ordine delle Operazioni
+
+**REGOLA FONDAMENTALE**: Le foto **devono essere già presenti sul NAS** prima di poterle aggiungere a uno Shared Album.
+
+**❌ WORKFLOW ERRATO** (causa errore):
+```
+1. Crea Published Collection
+2. Crea Shared Album
+3. Crea keyword
+4. Aggiungi foto + keyword insieme
+5. Publish → ERRORE: "attempt to index field '?' (a nil value)"
+```
+
+**✅ WORKFLOW CORRETTO**:
+```
+1. Crea Published Collection
+2. Aggiungi foto SENZA keyword Shared Album
+3. Publish (upload foto sul NAS)
+4. Crea Shared Album
+5. Crea keyword
+6. Aggiungi keyword alle foto già pubblicate
+7. Re-publish con CheckExisting
+```
+
+Il plugin può solo **collegare foto esistenti** agli Shared Albums, non può caricare e collegare in un'unica operazione.
+
+---
+
 ### Scenario A: Foto Già Pubblicate
 
 Se le foto sono già state pubblicate nelle cartelle fisiche sul NAS, usa questo workflow **veloce**:
@@ -734,30 +762,40 @@ Se le foto sono già state pubblicate nelle cartelle fisiche sul NAS, usa questo
 
 ### Scenario B: Foto Nuove (Non Ancora Pubblicate)
 
-Per foto che non hai ancora uploadato:
+Per foto che non hai ancora uploadato sul NAS:
 
-#### Step 1: Assegnare la Keyword
+**⚠️ ATTENZIONE**: NON aggiungere la keyword dello Shared Album prima del primo upload!
 
-Come nello Scenario A, assegna la keyword dello Shared Album alle foto.
+#### Step 1: Primo Upload (SENZA Keyword Shared Album)
 
-**Risultato**: Le foto vanno in **"New Photos to Publish"**
+1. **NON assegnare** ancora la keyword dello Shared Album
+2. Aggiungi le foto alla Published Collection (trascina dalla Library)
+3. Click destro sulla Published Collection → **Publish Settings...**
+4. Publish Mode: **"Upload"** (normale)
+5. Clicca **Publish**
+6. Attendi l'upload completo
 
-#### Step 2: Configurare Publish Mode
-
-1. Click destro sulla Published Collection → **Publish Settings...**
-2. Publish Mode: **"Upload"** (normale)
-3. Salva
-
-#### Step 3: Pubblicare
-
-1. Clicca **Publish**
-2. Attendi l'upload completo (può richiedere tempo a seconda della dimensione)
-
-**Cosa succede durante il publish:**
-- Upload delle foto nelle cartelle fisiche
+**Cosa succede:**
+- Upload delle foto nelle cartelle fisiche sul NAS
 - Creazione dei thumbnail
-- Aggiunta automatica allo Shared Album
 - Metadata sincronizzati
+- Foto marcate come "Published" ✅
+
+#### Step 2: Collegare allo Shared Album (DOPO l'Upload)
+
+**Ora che le foto sono sul NAS**, puoi collegarle allo Shared Album:
+
+1. Seleziona le foto appena pubblicate
+2. Assegna la keyword dello Shared Album
+3. Le foto vanno in **"Modified Photos to Re-Publish"**
+4. Click destro sulla Published Collection → **Publish Settings...**
+5. Cambia Publish Mode in: **"CheckExisting"**
+6. Clicca **Publish**
+
+**Cosa succede:**
+- Il plugin verifica che le foto esistono sul NAS ✅
+- Aggiunge i link allo Shared Album
+- Operazione veloce (non ri-uploada le foto)
 
 ### Scenario C: Solo Metadata Update
 
@@ -962,6 +1000,54 @@ Photo StatLr
 
 ## Troubleshooting
 
+### Problema: Errore "attempt to index field '?' (a nil value)"
+
+**Sintomi**: Durante il publish, Lightroom mostra l'errore:
+```
+Impossibile aggiornare la raccolta.
+Si è verificato un errore interno:
+[string "PSPhotosAPI.lua"]:604: attempt to index field '?' (a nil value)
+```
+
+**Causa**: Stai cercando di aggiungere foto a uno Shared Album, ma le foto **non esistono ancora sul NAS**.
+
+**Il problema si verifica quando:**
+1. Crei una nuova Published Collection
+2. Crei lo Shared Album
+3. Aggiungi foto con la keyword dello Shared Album
+4. Pubblichi per la prima volta → **ERRORE**
+
+**Spiegazione Tecnica**:
+Il plugin cerca di recuperare gli ID delle foto dal NAS per collegarle allo Shared Album, ma le foto non sono ancora state caricate, quindi la cache interna restituisce `nil` e causa l'errore.
+
+**✅ Soluzione: Pubblicare in Due Fasi**
+
+**Fase 1 - Upload Foto (senza Shared Album):**
+```
+1. Rimuovi la keyword dello Shared Album dalle foto
+2. Published Collection → Edit Settings
+3. Publish Mode: Upload
+4. Clicca Publish
+5. Attendi il completamento
+```
+
+**Fase 2 - Collegamento allo Shared Album:**
+```
+1. Aggiungi la keyword dello Shared Album alle foto
+2. Published Collection → Edit Settings
+3. Publish Mode: CheckExisting
+4. Clicca Publish
+5. ✅ Ora dovrebbe funzionare!
+```
+
+**Regola Generale**:
+- **PRIMA** carichi le foto sul NAS (upload senza keyword Shared Album)
+- **POI** le colleghi agli Shared Albums (re-publish con keyword)
+
+**Prevenzione**: Quando pubblichi foto nuove che vuoi aggiungere a uno Shared Album, segui lo [Scenario B](#scenario-b-foto-nuove-non-ancora-pubblicate) nella sezione "Pubblicare Foto nello Shared Album".
+
+---
+
 ### Problema: Keywords Non Appaiono
 
 **Sintomi**: La gerarchia `Photo StatLr > Shared Albums` non esiste
@@ -1136,6 +1222,16 @@ A: ❌ No. Ogni Shared Album appartiene a un solo Publish Service. Se hai più s
 A: ❌ No. Gli album contengono solo riferimenti (link) alle foto. Le foto fisiche sono nella cartella originale e non vengono duplicate.
 
 ### Publish & Workflow
+
+**Q: Posso pubblicare foto nuove e aggiungerle subito a uno Shared Album?**
+A: ❌ **No!** Questo è un errore comune che causa `"attempt to index field '?' (a nil value)"`.
+
+**Workflow corretto per foto nuove:**
+1. PRIMA: Pubblica le foto **senza** keyword Shared Album (Upload mode)
+2. POI: Aggiungi la keyword alle foto pubblicate
+3. INFINE: Re-pubblica con CheckExisting
+
+Il plugin può solo collegare **foto già esistenti** sul NAS agli Shared Albums. Vedi [Scenario B](#scenario-b-foto-nuove-non-ancora-pubblicate) per dettagli.
 
 **Q: Devo sempre usare "CheckExisting" per aggiornare Shared Albums?**
 A: ✅ Sì, è il metodo **più veloce** per foto già pubblicate. Altri modi:
