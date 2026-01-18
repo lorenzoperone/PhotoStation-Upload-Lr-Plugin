@@ -1,0 +1,964 @@
+15:18:34, TRACE: updateExportSettings: done.
+15:18:34, INFO : Environment: plugin: 7.5.1.20251214 Lr: 14.5 OS: 26.2.0.25C56 Lang: it
+15:18:34, INFO : processRenderedPhotos starting
+15:18:34, TRACE: openSession(operation = ProcessRenderedPhotos, publishMode = Publish) starting ...
+15:18:34, DEBUG: openSession: copy collection upload settings
+15:18:34, DEBUG: getCollectionUploadPath() returns 'test'
+15:18:34, DEBUG: Photos.new(url=http://192.168.10.250:5000, personal=true, persUser=gennaro_Archivio, timeout=10, version=78, username=gennaro_Archivio, otp=nil, password=***)
+15:18:34, TRACE: pathIdCacheInitialize(user='gennaro_Archivio')
+15:18:34, DEBUG: Photos_API: LrHttp.post(url='http://192.168.10.250:5000/webapi/query.cgi', API=SYNO.API.Info params='version=1&api=SYNO.API.Info&method=query&query=SYNO.API.,SYNO.Foto.,SYNO.FotoTeam.')
+15:18:34, DEBUG: Got Body:
+{"data":{"SYNO.API.Auth":{"maxVersion":7,"minVersion":1,"path":"entry.cgi"},"SYNO.API.Auth.Key":{"maxVersion":7,"minVersion":7,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.Key.Code":{"maxVersion":7,"minVersion":7,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.RedirectURI":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.Type":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.UIConfig":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Encryption":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Info":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.OTP":{"maxVersion":1,"minVersion":1,"path":"otp.cgi"},"SYNO.Foto.BackgroundTask.File":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.BackgroundTask.Info":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Album":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Category":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Concept":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.ConditionAlbum":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Diff":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Folder":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.GeneralTag":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Geocoding":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Item":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.NormalAlbum":{"maxVersion":4,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Person":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.RecentlyAdded":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Similar":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.SimilarItem":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.SimilarTimeline":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Timeline":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Unit":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Development.Admin":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Download":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Favorite":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Index":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Migration":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Notification":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.PhotoRequest":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.PublicSharing":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.RegeneratePreview":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Search.Filter":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Search.Search":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.Admin":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.Guest":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.MobileCompatibility":{"max...
+15:18:34, XDBUG: Got Body(full):
+{"data":{"SYNO.API.Auth":{"maxVersion":7,"minVersion":1,"path":"entry.cgi"},"SYNO.API.Auth.Key":{"maxVersion":7,"minVersion":7,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.Key.Code":{"maxVersion":7,"minVersion":7,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.RedirectURI":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.Type":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.UIConfig":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Encryption":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Info":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.OTP":{"maxVersion":1,"minVersion":1,"path":"otp.cgi"},"SYNO.Foto.BackgroundTask.File":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.BackgroundTask.Info":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Album":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Category":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Concept":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.ConditionAlbum":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Diff":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Folder":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.GeneralTag":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Geocoding":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Item":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.NormalAlbum":{"maxVersion":4,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Person":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.RecentlyAdded":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Similar":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.SimilarItem":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.SimilarTimeline":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Timeline":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Unit":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Development.Admin":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Download":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Favorite":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Index":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Migration":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Notification":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.PhotoRequest":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.PublicSharing":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.RegeneratePreview":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Search.Filter":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Search.Search":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.Admin":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.Guest":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.MobileCompatibility":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.TeamSpace":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.User":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.Wizard":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Sharing.Misc":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Sharing.Passphrase":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Streaming":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Thumbnail":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Udc":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Upload.ConvertedFile":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Upload.Face":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Upload.Item":{"maxVersion":7,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Upload.PhotoRequestItem":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.UserInfo":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.BackgroundTask.File":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Concept":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Diff":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Folder":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.GeneralTag":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Geocoding":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Item":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Person":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.RecentlyAdded":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Similar":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.SimilarItem":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.SimilarTimeline":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Timeline":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Unit":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Download":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Index":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.RegeneratePreview":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Search.Filter":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Search.Search":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Sharing.FolderBatchPermission":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Sharing.FolderPermission":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Sharing.Passphrase":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Streaming":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Thumbnail":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Upload.ConvertedFile":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Upload.Face":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Upload.Item":{"maxVersion":7,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"}},"success":true}
+15:18:34, TRACE: Photos.new(url=http://192.168.10.250:5000, personal=true, persUser=gennaro_Archivio, timeout=10) returns
+{"Photo":[],"apiInfo":{"SYNO.API.Info":{"maxVersion":1,"minVersion":1,"path":"query.cgi"}},"hhid":"9252","password":"***","psWebAPI":"/webapi/","serverCapabilities":"'AUTH_2FA''META_DECRIPTION''META_TAG''UPLOAD_THUMBS''PERSONALAREA''SHAREDALBUM''META_RATING'","serverTimeout":10,"serverUrl":"http://192.168.10.250:5000","serverVersion":78,"thumbs":{"M":"320","S":"240","XL":"1280"},"userid":"gennaro_Archivio","username":"gennaro_Archivio"}
+15:18:34, DEBUG: "VideoConvPresets":{
+15:18:34, DEBUG: 	"1":{
+15:18:34, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:34, DEBUG: 		"comment":"Low quality, fast conversion"
+15:18:34, DEBUG: 		"video_options":"-c:v libx264 -preset veryfast -crf 26"
+15:18:34, DEBUG: 		"title":"Low"
+15:18:34, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:34, DEBUG: 	}
+15:18:34, DEBUG: 	"2":{
+15:18:34, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:34, DEBUG: 		"comment":"Medium quality, reasonable fast conversion"
+15:18:34, DEBUG: 		"video_options":"-c:v libx264 -preset medium -crf 23"
+15:18:34, DEBUG: 		"title":"Medium"
+15:18:34, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:34, DEBUG: 	}
+15:18:34, DEBUG: 	"3":{
+15:18:34, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:34, DEBUG: 		"comment":"High quality, reasonable fast conversion: good for converting the original video"
+15:18:34, DEBUG: 		"video_options":"-c:v libx264 -preset medium -crf 20"
+15:18:34, DEBUG: 		"title":"High"
+15:18:34, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:34, DEBUG: 	}
+15:18:34, DEBUG: 	"4":{
+15:18:34, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:34, DEBUG: 		"comment":"Higher quality, reasonable fast conversion: very good for converting the original video"
+15:18:34, DEBUG: 		"video_options":"-c:v libx264 -preset medium -crf 18"
+15:18:34, DEBUG: 		"title":"Higher"
+15:18:34, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:34, DEBUG: 	}
+15:18:34, DEBUG: 	"5":{
+15:18:34, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:34, DEBUG: 		"comment":"Very high quality, very slow conversion: best quality for converting the original video"
+15:18:34, DEBUG: 		"video_options":"-c:v libx264 -preset slow -crf 16"
+15:18:34, DEBUG: 		"title":"Highest"
+15:18:34, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:34, DEBUG: 	}
+15:18:34, DEBUG: 	"6":{
+15:18:34, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:34, DEBUG: 		"comment":"Low quality, fast conversion via NVIDIA CUDA"
+15:18:34, DEBUG: 		"video_options":"-c:v h264_nvenc -preset medium -qp 30"
+15:18:34, DEBUG: 		"title":"Low-CUDA"
+15:18:34, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:34, DEBUG: 	}
+15:18:34, DEBUG: 	"7":{
+15:18:34, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:34, DEBUG: 		"comment":"Medium quality, fast conversion via NVIDIA CUDA"
+15:18:34, DEBUG: 		"video_options":"-c:v h264_nvenc -preset medium -qp 26"
+15:18:34, DEBUG: 		"title":"Medium-CUDA"
+15:18:34, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:34, DEBUG: 	}
+15:18:34, DEBUG: 	"8":{
+15:18:34, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:34, DEBUG: 		"comment":"High quality, fast conversion via NVIDIA CUDA"
+15:18:34, DEBUG: 		"video_options":"-c:v h264_nvenc -preset medium -qp 24"
+15:18:34, DEBUG: 		"title":"High-CUDA"
+15:18:34, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:34, DEBUG: 	}
+15:18:34, DEBUG: 	"9":{
+15:18:34, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:34, DEBUG: 		"comment":"Higher quality, fast conversion via NVIDIA CUDA"
+15:18:34, DEBUG: 		"video_options":"-c:v h264_nvenc -preset medium -qp 21"
+15:18:34, DEBUG: 		"title":"Higher-CUDA"
+15:18:34, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:34, DEBUG: 	}
+15:18:34, DEBUG: 	"10":{
+15:18:34, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:34, DEBUG: 		"title":"Small-QSV"
+15:18:34, DEBUG: 		"video_options":"-c:v h264_qsv -global_quality 36 -look_ahead 1 -preset veryslow -r 30"
+15:18:34, DEBUG: 		"comment":"Medium quality, fast conversion via Intel QSV"
+15:18:34, DEBUG: 		"input_options":"-hwaccel qsv"
+15:18:34, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:34, DEBUG: 	}
+15:18:34, DEBUG: }
+15:18:34, TRACE: PSConvert.new:
+		conv:         '/opt/homebrew/bin/convert'
+		dcraw:        '/opt/homebrew/bin/dcraw'
+		ffmpeg:       '/opt/homebrew/bin/ffmpeg'
+15:18:34, DEBUG: Photos_API: LrHttp.post(url='http://192.168.10.250:5000/webapi/entry.cgi', API=SYNO.API.Auth params='method=login&api=SYNO.API.Auth&passwd=...&version=7&hhid=9252&enable_syno_token=yes&session=webui&account=gennaro%5FArchivio')
+15:18:35, DEBUG: Got Body:
+{"data":{"account":"gennaro_archivio","device_id":"ben4QJQcdN9NOD9AxzRVj364CVm2UBvhTLeojDwkKhXUnO_rrzKqH7R6RYWsAILqedEeiwMrSB1SwVxXvh-FeA","ik_message":"","is_portal_port":false,"sid":"LbNZejFX7jZpL47Vsp2iuTSweuMuwa2xFlKV8t0We_08WesW9M8-nHTruddtUAe0_blJgju8scFLWYAG2s2HhM","synotoken":"xIyNYzJhNQqKo"},"success":true}
+15:18:35, XDBUG: Got Body(full):
+{"data":{"account":"gennaro_archivio","device_id":"ben4QJQcdN9NOD9AxzRVj364CVm2UBvhTLeojDwkKhXUnO_rrzKqH7R6RYWsAILqedEeiwMrSB1SwVxXvh-FeA","ik_message":"","is_portal_port":false,"sid":"LbNZejFX7jZpL47Vsp2iuTSweuMuwa2xFlKV8t0We_08WesW9M8-nHTruddtUAe0_blJgju8scFLWYAG2s2HhM","synotoken":"xIyNYzJhNQqKo"},"success":true}
+15:18:35, DEBUG: Photos_API: LrHttp.post(url='http://192.168.10.250:5000/webapi/entry.cgi', API=SYNO.Foto.Browse.Folder params='id=0&version=1&method=get&api=SYNO.Foto.Browse.Folder')
+15:18:35, DEBUG: Got Body:
+{"data":{"folder":{"id":519,"name":"/","owner_user_id":3,"parent":519,"passphrase":"","shared":false,"sort_by":"default","sort_direction":"default"}},"success":true}
+15:18:35, XDBUG: Got Body(full):
+{"data":{"folder":{"id":519,"name":"/","owner_user_id":3,"parent":519,"passphrase":"","shared":false,"sort_by":"default","sort_direction":"default"}},"success":true}
+15:18:35, TRACE: pathIdCacheAddEntry(user='gennaro_Archivio', path='/', 'folder', id=519)
+15:18:35, XDBUG: PSLrUtilities.parent(/) returns /
+15:18:35, XDBUG: PSLrUtilities.leafName(/) returns nil
+15:18:35, INFO : Login to Personal Space of gennaro_Archivio(http://192.168.10.250:5000) OK
+15:18:35, TRACE: "openSession(ProcessRenderedPhotos): exportParams after all":{
+15:18:35, TRACE: 	"LR_size_resolution":"240"
+15:18:35, TRACE: 	"LR_metadata_keywordOptions":"flat"
+15:18:35, TRACE: 	"LR_DNG_compatibility_v13_0":"268435456"
+15:18:35, TRACE: 	"locationTagField5":"{LrFM:location}"
+15:18:35, TRACE: 	"locationTagSeperator":"-"
+15:18:35, TRACE: 	"LR_DNG_lossyCompression":"false"
+15:18:35, TRACE: 	"LR_DNG_previewSize":"medium"
+15:18:35, TRACE: 	"addVideoQuality":"2"
+15:18:35, TRACE: 	"LR_initialSequenceNumber":"1"
+15:18:35, TRACE: 	"proto2":"https"
+15:18:35, TRACE: 	"LR_size_megapixels":"5"
+15:18:35, TRACE: 	"LR_DNG_conversionMethod":"preserveRAW"
+15:18:35, TRACE: 	"largeThumbs":"true"
+15:18:35, TRACE: 	"serverUrl":"http://192.168.10.250:5000"
+15:18:35, TRACE: 	"servername":"192.168.10.250:5000"
+15:18:35, TRACE: 	"locationTagField2":"{LrFM:country}"
+15:18:35, TRACE: 	"photoServerLoggedIn":"true"
+15:18:35, TRACE: 	"converter":{
+15:18:35, TRACE: 		"conv":"/opt/homebrew/bin/convert"
+15:18:35, TRACE: 		"dcraw":"/opt/homebrew/bin/dcraw"
+15:18:35, TRACE: 		"ffmpeg":"/opt/homebrew/bin/ffmpeg"
+15:18:35, TRACE: 	}
+15:18:35, TRACE: 	"psPath2":"/#/personal_space/"
+15:18:35, TRACE: 	"photoServer":{
+15:18:35, TRACE: 		"serverVersion":"78"
+15:18:35, TRACE: 		"thumbs":"table: 0xa9663e080"
+15:18:35, TRACE: 		"serverTimeout":"10"
+15:18:35, TRACE: 		"serverCapabilities":"'AUTH_2FA''META_DECRIPTION''META_TAG''UPLOAD_THUMBS''PERSONALAREA''SHAREDALBUM''META_RATING'"
+15:18:35, TRACE: 		"userid":"gennaro_Archivio"
+15:18:35, TRACE: 		"serverUrl":"http://192.168.10.250:5000"
+15:18:35, TRACE: 		"password":"***"
+15:18:35, TRACE: 		"apiInfo":"table: 0xaa249a100"
+15:18:35, TRACE: 		"synotoken":"xIyNYzJhNQqKo"
+15:18:35, TRACE: 		"hhid":"9252"
+15:18:35, TRACE: 		"Photo":"table: 0xaa1775a80"
+15:18:35, TRACE: 		"psWebAPI":"/webapi/"
+15:18:35, TRACE: 		"username":"gennaro_Archivio"
+15:18:35, TRACE: 	}
+15:18:35, TRACE: 	"renameDstFile":"false"
+15:18:35, TRACE: 	"LR_jpeg_quality":"0.6"
+15:18:35, TRACE: 	"thumbGenerate":"true"
+15:18:35, TRACE: 	"LR_tokens":"compleanno_2025"
+15:18:35, TRACE: 	"LR_canExport":"true"
+15:18:35, TRACE: 	"LR_watermarking_id":"<simpleCopyrightWatermark>"
+15:18:35, TRACE: 	"dstRoot":"test"
+15:18:35, TRACE: 	"LR_export_useSubfolder":"true"
+15:18:35, TRACE: 	"useSecondAddress":"false"
+15:18:35, TRACE: 	"LR_DNG_compressed":"true"
+15:18:35, TRACE: 	"LR_outputSharpeningOn":"false"
+15:18:35, TRACE: 	"LR_renamingTokensOn":"false"
+15:18:35, TRACE: 	"LR_embeddedMetadataOption":"allExceptCameraInfo"
+15:18:35, TRACE: 	"LR_publish_connectionName":"gennaro_Archivio"
+15:18:35, TRACE: 	"addVideoMed":"None"
+15:18:35, TRACE: 	"orgVideoForceConv":"false"
+15:18:35, TRACE: 	"copyTree":"false"
+15:18:35, TRACE: 	"LR_publishedCollectionInfo":{
+15:18:35, TRACE: 		"parents":"table: 0xa9d6fc980"
+15:18:35, TRACE: 		"isDefaultCollection":"false"
+15:18:35, TRACE: 		"name":"test"
+15:18:35, TRACE: 	}
+15:18:35, TRACE: 	"addVideoLow":"None"
+15:18:35, TRACE: 	"storeDstRoot":"true"
+15:18:35, TRACE: 	"LR_collisionHandling":"ask"
+15:18:35, TRACE: 	"LR_export_videoPreset":"SIZE_max"
+15:18:35, TRACE: 	"LR_size_doNotEnlarge":"false"
+15:18:35, TRACE: 	"servername2":""
+15:18:35, TRACE: 	"LR_includeFaceTagsInIptc":"false"
+15:18:35, TRACE: 	"addVideoUltra":"None"
+15:18:35, TRACE: 	"LR_reimport_stackWithOriginal":"true"
+15:18:35, TRACE: 	"LR_export_destinationPathSuffix":"Esportazione senza titolo"
+15:18:35, TRACE: 	"locationTagField4":"{LrFM:city}"
+15:18:35, TRACE: 	"LR_outputSharpeningMedia":"screen"
+15:18:35, TRACE: 	"psPath":"/?launchApp=SYNO.Foto.AppInstance#/personal_space/"
+15:18:35, TRACE: 	"password":"***"
+15:18:35, TRACE: 	"LR_jpeg_useLimitSize":"false"
+15:18:35, TRACE: 	"srcRoot":""
+15:18:35, TRACE: 	"LR_exportServiceProviderTitle":"Photo StatLr"
+15:18:35, TRACE: 	"LR_size_maxHeight":"1000"
+15:18:35, TRACE: 	"LR_isExportForPublish":"true"
+15:18:35, TRACE: 	"serverTimeout2":"10"
+15:18:35, TRACE: 	"logLevel":"5"
+15:18:35, TRACE: 	"LR_DNG_embedRAW":"false"
+15:18:35, TRACE: 	"xlatLocationTags":"false"
+15:18:35, TRACE: 	"LR_size_doConstrain":"false"
+15:18:35, TRACE: 	"createDstRoot":"true"
+15:18:35, TRACE: 	"LR_useWatermark":"false"
+15:18:35, TRACE: 	"addVideoHigh":"None"
+15:18:35, TRACE: 	"LR_export_videoFileHandling":"include"
+15:18:35, TRACE: 	"LR_jxl_losslessQuality":"false"
+15:18:35, TRACE: 	"exifXlatFaceRegions":"false"
+15:18:35, TRACE: 	"LR_jxl_quality":"0.7"
+15:18:35, TRACE: 	"psUrl":"http://192.168.10.250:5000/?launchApp=SYNO.Foto.AppInstance#/personal_space/"
+15:18:35, TRACE: 	"exifXlatLabel":"false"
+15:18:35, TRACE: 	"proto":"http"
+15:18:35, TRACE: 	"exifTranslate":"false"
+15:18:35, TRACE: 	"exifXlatRating":"false"
+15:18:35, TRACE: 	"LR_includeFaceTagsAsKeywords":"false"
+15:18:35, TRACE: 	"LR_maximumCompatibility":"true"
+15:18:35, TRACE: 	"psVersion":"78"
+15:18:35, TRACE: 	"LR_removeLocationMetadata":"false"
+15:18:35, TRACE: 	"LR_tokenCustomString":""
+15:18:35, TRACE: 	"LR_format":"JPEG"
+15:18:35, TRACE: 	"LR_jpeg_limitSize":"100"
+15:18:35, TRACE: 	"LR_enableHDRDisplay":"false"
+15:18:35, TRACE: 	"serverTimeout":"10"
+15:18:35, TRACE: 	"LR_outputSharpeningLevel":"2"
+15:18:35, TRACE: 	"thumbSharpness":"MED"
+15:18:35, TRACE: 	"LR_tiff_preserveTransparency":"false"
+15:18:35, TRACE: 	"thumbQuality":"80"
+15:18:35, TRACE: 	"RAWandJPG":"false"
+15:18:35, TRACE: 	"useOtp":"false"
+15:18:35, TRACE: 	"LR_size_maxWidth":"1000"
+15:18:35, TRACE: 	"LR_extensionCase":"lowercase"
+15:18:35, TRACE: 	"locationTagTemplate":""
+15:18:35, TRACE: 	"LR_size_resolutionUnits":"inch"
+15:18:35, TRACE: 	"LR_removeFaceMetadata":"false"
+15:18:35, TRACE: 	"locationTagField3":"{LrFM:stateProvince}"
+15:18:35, TRACE: 	"LR_DNG_embedCache":"true"
+15:18:35, TRACE: 	"LR_avif_quality":"0.7"
+15:18:35, TRACE: 	"LR_export_bitDepth":"8"
+15:18:35, TRACE: 	"LR_reimportExportedPhoto":"false"
+15:18:35, TRACE: 	"personalPSOwner":"gennaro_Archivio"
+15:18:35, TRACE: 	"LR_reimport_stackWithOriginal_position":"below"
+15:18:35, TRACE: 	"orgVideoQuality":"3"
+15:18:35, TRACE: 	"locationTagField1":"{LrFM:isoCountryCode}"
+15:18:35, TRACE: 	"LR_export_videoFormat":"4e49434b-4832-3634-fbfb-fbfbfbfbfbfb"
+15:18:35, TRACE: 	"LR_export_postProcessing":"doNothing"
+15:18:35, TRACE: 	"uploadTimestamp":"capture"
+15:18:35, TRACE: 	"sortPhotos":"false"
+15:18:35, TRACE: 	"usePersonalPS":"true"
+15:18:35, TRACE: 	"LR_size_units":"pixels"
+15:18:35, TRACE: 	"LR_includeVideoFiles":"true"
+15:18:35, TRACE: 	"hardRotate":"false"
+15:18:35, TRACE: 	"LR_export_colorSpace":"sRGB"
+15:18:35, TRACE: 	"dstFilename":""
+15:18:35, TRACE: 	"publishMode":"Publish"
+15:18:35, TRACE: 	"LR_tiff_compressionMethod":"compressionMethod_None"
+15:18:35, TRACE: 	"username":"gennaro_Archivio"
+15:18:35, TRACE: 	"LR_size_resizeType":"wh"
+15:18:35, TRACE: 	"LR_export_destinationType":"desktop"
+15:18:35, TRACE: }
+15:18:35, INFO : processRenderedPhotos(mode: Publish).
+15:18:35, INFO : --------------------------------------------------------------------
+15:18:35, TRACE: --------------------------------------------------------------------
+15:18:35, TRACE: Next photo: /var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/1F8F8226-4B52-4608-9BE7-5C17727B26B9/_MG_9840.jpg
+15:18:35, XDBUG: PSLrUtilities.leafName(/Users/lorenzo/Pictures/foto_per_test/_MG_9840.JPG) returns _MG_9840.JPG
+15:18:35, XDBUG: PSLrUtilities.leafName(/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/1F8F8226-4B52-4608-9BE7-5C17727B26B9/_MG_9840.jpg) returns _MG_9840.jpg
+15:18:35, XDBUG: PSLrUtilities.extension(_MG_9840.jpg) returns 'jpg'
+15:18:35, TRACE: getPhotoPluginMetaLinkedSharedAlbums(/Users/lorenzo/Pictures/foto_per_test/_MG_9840.JPG): Shared Albums plugin metadata: ''
+15:18:35, DEBUG: removePhotoPluginMetaLinkedSharedAlbumForCollection(/Users/lorenzo/Pictures/foto_per_test/_MG_9840.JPG, {}): removing all Shared Albums for colletion '1935'
+15:18:35, TRACE: evaluatePlaceholderString(photo '_MG_9840.JPG', path 'test', type 'path')
+15:18:35, XDBUG: PSLrUtilities.removeExtension(_MG_9840.JPG) returns _MG_9840
+15:18:35, XDBUG: PSLrUtilities.addExtension(_MG_9840, jpg) returns _MG_9840.jpg
+15:18:35, XDBUG: PSLrUtilities.addExtension(_MG_9840.JPG, jpg) returns _MG_9840.jpg
+15:18:35, XDBUG: PSLrUtilities.removeExtension(_MG_9840.JPG) returns _MG_9840
+15:18:35, XDBUG: PSLrUtilities.addExtension(_MG_9840, jpg) returns _MG_9840.jpg
+15:18:35, DEBUG:   sanitized dstRoot: 'test', dstFilename '_MG_9840.jpg'
+15:18:35, XDBUG: PSLrUtilities.parent(/Users/lorenzo/Pictures/foto_per_test/_MG_9840.JPG) returns /Users/lorenzo/Pictures/foto_per_test
+15:18:35, XDBUG: PSLrUtilities.extension(/Users/lorenzo/Pictures/foto_per_test/_MG_9840.JPG) returns 'JPG'
+15:18:35, XDBUG: PSLrUtilities.child(/Users/lorenzo/Pictures/foto_per_test, _MG_9840.jpg) returns /Users/lorenzo/Pictures/foto_per_test/_MG_9840.jpg
+15:18:35, XDBUG: PSLrUtilities.extension(_MG_9840.jpg) returns 'jpg'
+15:18:35, XDBUG: PSLrUtilities.leafName(/Users/lorenzo/Pictures/foto_per_test/_MG_9840.jpg) returns _MG_9840.jpg
+15:18:35, TRACE: getPublishPath('/Users/lorenzo/Pictures/foto_per_test/_MG_9840.JPG', jpg, Flat, 'test')
+    returns '_MG_9840.jpg', 'test/_MG_9840.jpg'
+15:18:35, TRACE: Old publishedPhotoId: '<Nil>', New publishedPhotoId: 'test/_MG_9840.jpg'
+15:18:35, XDBUG: PSLrUtilities.leafName(test/_MG_9840.jpg) returns _MG_9840.jpg
+15:18:35, TRACE:   createTree: Src Path: ./test from: . to: 
+15:18:35, DEBUG:   createTree: dstDir is: test
+15:18:35, XDBUG: getFolderId(userid:gennaro_Archivio, path:'/test') ...
+15:18:35, XDBUG: pathIdCacheGetEntry(userid:gennaro_Archivio, path:'/test', 'folder', wantsInfo:nil)...
+15:18:35, XDBUG: PSLrUtilities.parent(/test) returns /
+15:18:35, XDBUG: PSLrUtilities.leafName(/test) returns test
+15:18:35, DEBUG: pathIdCacheGetEntry(userid:gennaro_Archivio, path:'/test'): cache update required ... 
+15:18:35, DEBUG: Photos_API: LrHttp.post(url='http://192.168.10.250:5000/webapi/entry.cgi', API=SYNO.Foto.Browse.Folder params='offset=0&version=1&limit=2000&additional=[]&id=519&method=list&api=SYNO.Foto.Browse.Folder&sort_direction=asc')
+15:18:35, DEBUG: Got Body:
+{"data":{"list":[]},"success":true}
+15:18:35, XDBUG: Got Body(full):
+{"data":{"list":[]},"success":true}
+15:18:35, TRACE: Photos_listFolderSubfolders('/', '519') returns 0 items
+15:18:35, XDBUG: "functionName('Photos_listFolderSubfolders', '/'):
+":{
+15:18:35, XDBUG: }
+15:18:35, DEBUG: pathIdCacheGetEntry(userid:gennaro_Archivio, path:'/test') listSubfolders found 0 subfolders in '/'
+15:18:35, XDBUG: PSLrUtilities.parent(/test) returns /
+15:18:35, XDBUG: PSLrUtilities.leafName(/test) returns test
+15:18:35, XDBUG: getFolderId(userid:gennaro_Archivio, path:'/') ...
+15:18:35, XDBUG: pathIdCacheGetEntry(userid:gennaro_Archivio, path:'/', 'folder', wantsInfo:nil)...
+15:18:35, TRACE: getFolderId(userid:gennaro_Archivio, path:'/') returns '519' from cache
+15:18:35, TRACE: Photos_createFolder('/', '519', 'test') ...
+15:18:35, DEBUG: Photos_API: LrHttp.post(url='http://192.168.10.250:5000/webapi/entry.cgi', API=SYNO.Foto.Browse.Folder params='version=1&api=SYNO.Foto.Browse.Folder&name="test"&target_id=519&method=create')
+15:18:36, DEBUG: Got Body:
+{"data":{"folder":{"id":537,"name":"/test","owner_user_id":3,"parent":519,"passphrase":"","shared":false,"sort_by":"default","sort_direction":"default"}},"success":true}
+15:18:36, XDBUG: Got Body(full):
+{"data":{"folder":{"id":537,"name":"/test","owner_user_id":3,"parent":519,"passphrase":"","shared":false,"sort_by":"default","sort_direction":"default"}},"success":true}
+15:18:36, XDBUG: PSLrUtilities.child(/, test) returns //test
+15:18:36, TRACE: pathIdCacheAddEntry(user='gennaro_Archivio', path='//test', 'folder', id=537)
+15:18:36, XDBUG: PSLrUtilities.parent(//test) returns /
+15:18:36, XDBUG: PSLrUtilities.leafName(//test) returns test
+15:18:36, TRACE: Photos_createFolder('/', '519', 'test') returns 537
+15:18:36, TRACE: getFolderId(userid:gennaro_Archivio, path '/test') returns '537' (after creating folder)
+15:18:36, TRACE: getDateTimeOriginal():	dateTimeOriginal found 
+15:18:36, TRACE: 	dateTimeOriginal: 2014-01-01 00:03:51
+15:18:36, XDBUG: PSLrUtilities.parent(/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/1F8F8226-4B52-4608-9BE7-5C17727B26B9/_MG_9840.jpg) returns /var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/1F8F8226-4B52-4608-9BE7-5C17727B26B9
+15:18:36, XDBUG: PSLrUtilities.leafName(/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/1F8F8226-4B52-4608-9BE7-5C17727B26B9/_MG_9840.jpg) returns _MG_9840.jpg
+15:18:36, XDBUG: PSLrUtilities.removeExtension(_MG_9840.jpg) returns _MG_9840
+15:18:36, XDBUG: PSLrUtilities.addExtension(_MG_9840_XL, jpg) returns _MG_9840_XL.jpg
+15:18:36, XDBUG: PSLrUtilities.child(/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/1F8F8226-4B52-4608-9BE7-5C17727B26B9, _MG_9840_XL.jpg) returns /var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/1F8F8226-4B52-4608-9BE7-5C17727B26B9/_MG_9840_XL.jpg
+15:18:36, XDBUG: PSLrUtilities.addExtension(_MG_9840_M, jpg) returns _MG_9840_M.jpg
+15:18:36, XDBUG: PSLrUtilities.child(/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/1F8F8226-4B52-4608-9BE7-5C17727B26B9, _MG_9840_M.jpg) returns /var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/1F8F8226-4B52-4608-9BE7-5C17727B26B9/_MG_9840_M.jpg
+15:18:36, XDBUG: PSLrUtilities.addExtension(_MG_9840_S, jpg) returns _MG_9840_S.jpg
+15:18:36, XDBUG: PSLrUtilities.child(/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/1F8F8226-4B52-4608-9BE7-5C17727B26B9, _MG_9840_S.jpg) returns /var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/1F8F8226-4B52-4608-9BE7-5C17727B26B9/_MG_9840_S.jpg
+15:18:36, TRACE: "/opt/homebrew/bin/convert" "/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/1F8F8226-4B52-4608-9BE7-5C17727B26B9/_MG_9840.jpg" \( -clone 0 -define jpeg:size=1280x1280\>^ -thumbnail 1280x1280\>^ -flatten -quality 80 -auto-orient -unsharp 0.5x0.5+1.25+0.0 -write "/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/1F8F8226-4B52-4608-9BE7-5C17727B26B9/_MG_9840_XL.jpg" \) -delete 0 \( +clone   -define jpeg:size=320x320\>^ -thumbnail 320x320\>^ -flatten -quality 80 -auto-orient -unsharp 0.5x0.5+1.25+0.0 -write "/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/1F8F8226-4B52-4608-9BE7-5C17727B26B9/_MG_9840_M.jpg" +delete \) -define jpeg:size=240x240\>^ -thumbnail 240x240\>^ -flatten -quality 80 -auto-orient -unsharp 0.5x0.5+1.25+0.0 "/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/1F8F8226-4B52-4608-9BE7-5C17727B26B9/_MG_9840_S.jpg" 2>> "/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/PhotoStatLr.log"
+WARNING: The convert command is deprecated in IMv7, use "magick" instead of "convert" or "magick convert"
+
+15:18:36, XDBUG: PSLrUtilities.child(test, _MG_9840.jpg) returns test/_MG_9840.jpg
+15:18:36, XDBUG: PSLrUtilities.parent(/test/_MG_9840.jpg) returns /test
+15:18:36, XDBUG: PSLrUtilities.leafName(/test/_MG_9840.jpg) returns _MG_9840.jpg
+15:18:36, XDBUG: PSLrUtilities.child(/test, _mg_9840.jpg) returns /test/_mg_9840.jpg
+15:18:36, XDBUG: getPhotoId(userid:gennaro_Archivio, path:'/test/_mg_9840.jpg') ...
+15:18:36, XDBUG: PSLrUtilities.parent(/test/_mg_9840.jpg) returns /test
+15:18:36, XDBUG: PSLrUtilities.leafName(/test/_mg_9840.jpg) returns _mg_9840.jpg
+15:18:36, XDBUG: PSLrUtilities.child(/test, _mg_9840.jpg) returns /test/_mg_9840.jpg
+15:18:36, XDBUG: pathIdCacheGetEntry(userid:gennaro_Archivio, path:'/test/_mg_9840.jpg', 'item', wantsInfo:true)...
+15:18:36, XDBUG: PSLrUtilities.parent(/test/_mg_9840.jpg) returns /test
+15:18:36, XDBUG: PSLrUtilities.leafName(/test/_mg_9840.jpg) returns _mg_9840.jpg
+15:18:36, DEBUG: pathIdCacheGetEntry(userid:gennaro_Archivio, path:'/test/_mg_9840.jpg'): cache update required ... 
+15:18:36, XDBUG: pathIdCacheGetEntry(userid:gennaro_Archivio, path:'/test', 'folder', wantsInfo:nil)...
+15:18:36, XDBUG: PSLrUtilities.parent(/test) returns /
+15:18:36, XDBUG: PSLrUtilities.leafName(/test) returns test
+15:18:36, DEBUG: Photos_API: LrHttp.post(url='http://192.168.10.250:5000/webapi/entry.cgi', API=SYNO.Foto.Browse.Item params='sort_by=takentime&method=list&additional=["description","tag","gps","video_meta","address","rating","person"]&limit=5000&folder_id=537&sort_direction=asc&version=2&api=SYNO.Foto.Browse.Item&offset=0')
+15:18:36, DEBUG: Got Body:
+{"success":true,"data":{"list":[]}}
+15:18:36, XDBUG: Got Body(full):
+{"success":true,"data":{"list":[]}}
+15:18:36, TRACE: Photos_listFolderItems('/test', '537') returns 0 items
+15:18:36, XDBUG: "functionName('Photos_listFolderItems', '/test'):
+":{
+15:18:36, XDBUG: }
+15:18:36, DEBUG: pathIdCacheGetEntry(userid:gennaro_Archivio, path:'/test/_mg_9840.jpg') listItems('/test') found 0 items
+15:18:36, ERROR: That does it, I'm leaving! Internal error: '[string "PSPhotosAPI.lua"]:604: attempt to index field '?' (a nil value)'
+15:18:43, TRACE: updateExportSettings: done.
+15:18:43, INFO : Environment: plugin: 7.5.1.20251214 Lr: 14.5 OS: 26.2.0.25C56 Lang: it
+15:18:43, INFO : processRenderedPhotos starting
+15:18:43, TRACE: openSession(operation = ProcessRenderedPhotos, publishMode = Publish) starting ...
+15:18:43, DEBUG: openSession: copy collection upload settings
+15:18:43, DEBUG: getCollectionUploadPath() returns 'test'
+15:18:43, DEBUG: Photos.new(url=http://192.168.10.250:5000, personal=true, persUser=gennaro_Archivio, timeout=10, version=78, username=gennaro_Archivio, otp=nil, password=***)
+15:18:43, TRACE: pathIdCacheInitialize(user='gennaro_Archivio')
+15:18:43, DEBUG: Photos_API: LrHttp.post(url='http://192.168.10.250:5000/webapi/query.cgi', API=SYNO.API.Info params='version=1&api=SYNO.API.Info&method=query&query=SYNO.API.,SYNO.Foto.,SYNO.FotoTeam.')
+15:18:43, DEBUG: Got Body:
+{"data":{"SYNO.API.Auth":{"maxVersion":7,"minVersion":1,"path":"entry.cgi"},"SYNO.API.Auth.Key":{"maxVersion":7,"minVersion":7,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.Key.Code":{"maxVersion":7,"minVersion":7,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.RedirectURI":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.Type":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.UIConfig":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Encryption":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Info":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.OTP":{"maxVersion":1,"minVersion":1,"path":"otp.cgi"},"SYNO.Foto.BackgroundTask.File":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.BackgroundTask.Info":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Album":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Category":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Concept":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.ConditionAlbum":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Diff":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Folder":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.GeneralTag":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Geocoding":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Item":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.NormalAlbum":{"maxVersion":4,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Person":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.RecentlyAdded":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Similar":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.SimilarItem":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.SimilarTimeline":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Timeline":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Unit":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Development.Admin":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Download":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Favorite":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Index":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Migration":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Notification":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.PhotoRequest":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.PublicSharing":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.RegeneratePreview":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Search.Filter":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Search.Search":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.Admin":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.Guest":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.MobileCompatibility":{"max...
+15:18:43, XDBUG: Got Body(full):
+{"data":{"SYNO.API.Auth":{"maxVersion":7,"minVersion":1,"path":"entry.cgi"},"SYNO.API.Auth.Key":{"maxVersion":7,"minVersion":7,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.Key.Code":{"maxVersion":7,"minVersion":7,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.RedirectURI":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.Type":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Auth.UIConfig":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Encryption":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.Info":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.API.OTP":{"maxVersion":1,"minVersion":1,"path":"otp.cgi"},"SYNO.Foto.BackgroundTask.File":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.BackgroundTask.Info":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Album":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Category":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Concept":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.ConditionAlbum":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Diff":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Folder":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.GeneralTag":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Geocoding":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Item":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.NormalAlbum":{"maxVersion":4,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Person":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.RecentlyAdded":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Similar":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.SimilarItem":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.SimilarTimeline":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Timeline":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Browse.Unit":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Development.Admin":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Download":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Favorite":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Index":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Migration":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Notification":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.PhotoRequest":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.PublicSharing":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.RegeneratePreview":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Search.Filter":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Search.Search":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.Admin":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.Guest":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.MobileCompatibility":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.TeamSpace":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.User":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Setting.Wizard":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Sharing.Misc":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Sharing.Passphrase":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Streaming":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Thumbnail":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Udc":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Upload.ConvertedFile":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Upload.Face":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Upload.Item":{"maxVersion":7,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.Upload.PhotoRequestItem":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.Foto.UserInfo":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.BackgroundTask.File":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Concept":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Diff":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Folder":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.GeneralTag":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Geocoding":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Item":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Person":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.RecentlyAdded":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Similar":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.SimilarItem":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.SimilarTimeline":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Timeline":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Browse.Unit":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Download":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Index":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.RegeneratePreview":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Search.Filter":{"maxVersion":3,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Search.Search":{"maxVersion":6,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Sharing.FolderBatchPermission":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Sharing.FolderPermission":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Sharing.Passphrase":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Streaming":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Thumbnail":{"maxVersion":2,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Upload.ConvertedFile":{"maxVersion":5,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Upload.Face":{"maxVersion":1,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"},"SYNO.FotoTeam.Upload.Item":{"maxVersion":7,"minVersion":1,"path":"entry.cgi","requestFormat":"JSON"}},"success":true}
+15:18:43, TRACE: Photos.new(url=http://192.168.10.250:5000, personal=true, persUser=gennaro_Archivio, timeout=10) returns
+{"Photo":[],"apiInfo":{"SYNO.API.Info":{"maxVersion":1,"minVersion":1,"path":"query.cgi"}},"hhid":"9252","password":"***","psWebAPI":"/webapi/","serverCapabilities":"'AUTH_2FA''META_DECRIPTION''META_TAG''UPLOAD_THUMBS''PERSONALAREA''SHAREDALBUM''META_RATING'","serverTimeout":10,"serverUrl":"http://192.168.10.250:5000","serverVersion":78,"thumbs":{"M":"320","S":"240","XL":"1280"},"userid":"gennaro_Archivio","username":"gennaro_Archivio"}
+15:18:43, DEBUG: "VideoConvPresets":{
+15:18:43, DEBUG: 	"1":{
+15:18:43, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:43, DEBUG: 		"comment":"Low quality, fast conversion"
+15:18:43, DEBUG: 		"video_options":"-c:v libx264 -preset veryfast -crf 26"
+15:18:43, DEBUG: 		"title":"Low"
+15:18:43, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:43, DEBUG: 	}
+15:18:43, DEBUG: 	"2":{
+15:18:43, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:43, DEBUG: 		"comment":"Medium quality, reasonable fast conversion"
+15:18:43, DEBUG: 		"video_options":"-c:v libx264 -preset medium -crf 23"
+15:18:43, DEBUG: 		"title":"Medium"
+15:18:43, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:43, DEBUG: 	}
+15:18:43, DEBUG: 	"3":{
+15:18:43, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:43, DEBUG: 		"comment":"High quality, reasonable fast conversion: good for converting the original video"
+15:18:43, DEBUG: 		"video_options":"-c:v libx264 -preset medium -crf 20"
+15:18:43, DEBUG: 		"title":"High"
+15:18:43, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:43, DEBUG: 	}
+15:18:43, DEBUG: 	"4":{
+15:18:43, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:43, DEBUG: 		"comment":"Higher quality, reasonable fast conversion: very good for converting the original video"
+15:18:43, DEBUG: 		"video_options":"-c:v libx264 -preset medium -crf 18"
+15:18:43, DEBUG: 		"title":"Higher"
+15:18:43, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:43, DEBUG: 	}
+15:18:43, DEBUG: 	"5":{
+15:18:43, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:43, DEBUG: 		"comment":"Very high quality, very slow conversion: best quality for converting the original video"
+15:18:43, DEBUG: 		"video_options":"-c:v libx264 -preset slow -crf 16"
+15:18:43, DEBUG: 		"title":"Highest"
+15:18:43, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:43, DEBUG: 	}
+15:18:43, DEBUG: 	"6":{
+15:18:43, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:43, DEBUG: 		"comment":"Low quality, fast conversion via NVIDIA CUDA"
+15:18:43, DEBUG: 		"video_options":"-c:v h264_nvenc -preset medium -qp 30"
+15:18:43, DEBUG: 		"title":"Low-CUDA"
+15:18:43, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:43, DEBUG: 	}
+15:18:43, DEBUG: 	"7":{
+15:18:43, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:43, DEBUG: 		"comment":"Medium quality, fast conversion via NVIDIA CUDA"
+15:18:43, DEBUG: 		"video_options":"-c:v h264_nvenc -preset medium -qp 26"
+15:18:43, DEBUG: 		"title":"Medium-CUDA"
+15:18:43, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:43, DEBUG: 	}
+15:18:43, DEBUG: 	"8":{
+15:18:43, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:43, DEBUG: 		"comment":"High quality, fast conversion via NVIDIA CUDA"
+15:18:43, DEBUG: 		"video_options":"-c:v h264_nvenc -preset medium -qp 24"
+15:18:43, DEBUG: 		"title":"High-CUDA"
+15:18:43, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:43, DEBUG: 	}
+15:18:43, DEBUG: 	"9":{
+15:18:43, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:43, DEBUG: 		"comment":"Higher quality, fast conversion via NVIDIA CUDA"
+15:18:43, DEBUG: 		"video_options":"-c:v h264_nvenc -preset medium -qp 21"
+15:18:43, DEBUG: 		"title":"Higher-CUDA"
+15:18:43, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:43, DEBUG: 	}
+15:18:43, DEBUG: 	"10":{
+15:18:43, DEBUG: 		"audio_options":"-strict experimental -acodec aac -ar 44100 -b:a 64k -ac 2"
+15:18:43, DEBUG: 		"title":"Small-QSV"
+15:18:43, DEBUG: 		"video_options":"-c:v h264_qsv -global_quality 36 -look_ahead 1 -preset veryslow -r 30"
+15:18:43, DEBUG: 		"comment":"Medium quality, fast conversion via Intel QSV"
+15:18:43, DEBUG: 		"input_options":"-hwaccel qsv"
+15:18:43, DEBUG: 		"video_filters":"-vf format=yuv420p"
+15:18:43, DEBUG: 	}
+15:18:43, DEBUG: }
+15:18:43, TRACE: PSConvert.new:
+		conv:         '/opt/homebrew/bin/convert'
+		dcraw:        '/opt/homebrew/bin/dcraw'
+		ffmpeg:       '/opt/homebrew/bin/ffmpeg'
+15:18:43, DEBUG: Photos_API: LrHttp.post(url='http://192.168.10.250:5000/webapi/entry.cgi', API=SYNO.API.Auth params='method=login&api=SYNO.API.Auth&passwd=...&version=7&hhid=9252&enable_syno_token=yes&session=webui&account=gennaro%5FArchivio')
+15:18:44, DEBUG: Got Body:
+{"data":{"account":"gennaro_archivio","device_id":"ben4QJQcdN9NOD9AxzRVj364CVm2UBvhTLeojDwkKhXUnO_rrzKqH7R6RYWsAILqedEeiwMrSB1SwVxXvh-FeA","ik_message":"","is_portal_port":false,"sid":"bQ06yz4j6USlMp7mASwbDx9w0Dmc6otPdjMavHpLN5wNwm8bZo6A7qx4iWCswbwnn4joU8EulThyU1Ouwz7VzA","synotoken":"4qEA1W3vbIdhQ"},"success":true}
+15:18:44, XDBUG: Got Body(full):
+{"data":{"account":"gennaro_archivio","device_id":"ben4QJQcdN9NOD9AxzRVj364CVm2UBvhTLeojDwkKhXUnO_rrzKqH7R6RYWsAILqedEeiwMrSB1SwVxXvh-FeA","ik_message":"","is_portal_port":false,"sid":"bQ06yz4j6USlMp7mASwbDx9w0Dmc6otPdjMavHpLN5wNwm8bZo6A7qx4iWCswbwnn4joU8EulThyU1Ouwz7VzA","synotoken":"4qEA1W3vbIdhQ"},"success":true}
+15:18:44, DEBUG: Photos_API: LrHttp.post(url='http://192.168.10.250:5000/webapi/entry.cgi', API=SYNO.Foto.Browse.Folder params='id=0&version=1&method=get&api=SYNO.Foto.Browse.Folder')
+15:18:44, DEBUG: Got Body:
+{"data":{"folder":{"id":519,"name":"/","owner_user_id":3,"parent":519,"passphrase":"","shared":false,"sort_by":"default","sort_direction":"default"}},"success":true}
+15:18:44, XDBUG: Got Body(full):
+{"data":{"folder":{"id":519,"name":"/","owner_user_id":3,"parent":519,"passphrase":"","shared":false,"sort_by":"default","sort_direction":"default"}},"success":true}
+15:18:44, TRACE: pathIdCacheAddEntry(user='gennaro_Archivio', path='/', 'folder', id=519)
+15:18:44, XDBUG: PSLrUtilities.parent(/) returns /
+15:18:44, XDBUG: PSLrUtilities.leafName(/) returns nil
+15:18:44, INFO : Login to Personal Space of gennaro_Archivio(http://192.168.10.250:5000) OK
+15:18:44, TRACE: "openSession(ProcessRenderedPhotos): exportParams after all":{
+15:18:44, TRACE: 	"LR_size_resolution":"240"
+15:18:44, TRACE: 	"LR_metadata_keywordOptions":"flat"
+15:18:44, TRACE: 	"LR_DNG_compatibility_v13_0":"268435456"
+15:18:44, TRACE: 	"locationTagField5":"{LrFM:location}"
+15:18:44, TRACE: 	"locationTagSeperator":"-"
+15:18:44, TRACE: 	"LR_DNG_lossyCompression":"false"
+15:18:44, TRACE: 	"LR_DNG_previewSize":"medium"
+15:18:44, TRACE: 	"addVideoQuality":"2"
+15:18:44, TRACE: 	"LR_initialSequenceNumber":"1"
+15:18:44, TRACE: 	"proto2":"https"
+15:18:44, TRACE: 	"LR_size_megapixels":"5"
+15:18:44, TRACE: 	"LR_DNG_conversionMethod":"preserveRAW"
+15:18:44, TRACE: 	"largeThumbs":"true"
+15:18:44, TRACE: 	"serverUrl":"http://192.168.10.250:5000"
+15:18:44, TRACE: 	"servername":"192.168.10.250:5000"
+15:18:44, TRACE: 	"locationTagField2":"{LrFM:country}"
+15:18:44, TRACE: 	"photoServerLoggedIn":"true"
+15:18:44, TRACE: 	"converter":{
+15:18:44, TRACE: 		"conv":"/opt/homebrew/bin/convert"
+15:18:44, TRACE: 		"dcraw":"/opt/homebrew/bin/dcraw"
+15:18:44, TRACE: 		"ffmpeg":"/opt/homebrew/bin/ffmpeg"
+15:18:44, TRACE: 	}
+15:18:44, TRACE: 	"psPath2":"/#/personal_space/"
+15:18:44, TRACE: 	"photoServer":{
+15:18:44, TRACE: 		"serverVersion":"78"
+15:18:44, TRACE: 		"thumbs":"table: 0xa9663e080"
+15:18:44, TRACE: 		"serverTimeout":"10"
+15:18:44, TRACE: 		"serverCapabilities":"'AUTH_2FA''META_DECRIPTION''META_TAG''UPLOAD_THUMBS''PERSONALAREA''SHAREDALBUM''META_RATING'"
+15:18:44, TRACE: 		"userid":"gennaro_Archivio"
+15:18:44, TRACE: 		"serverUrl":"http://192.168.10.250:5000"
+15:18:44, TRACE: 		"password":"***"
+15:18:44, TRACE: 		"apiInfo":"table: 0xaa1081080"
+15:18:44, TRACE: 		"synotoken":"4qEA1W3vbIdhQ"
+15:18:44, TRACE: 		"hhid":"9252"
+15:18:44, TRACE: 		"Photo":"table: 0xaa1082540"
+15:18:44, TRACE: 		"psWebAPI":"/webapi/"
+15:18:44, TRACE: 		"username":"gennaro_Archivio"
+15:18:44, TRACE: 	}
+15:18:44, TRACE: 	"renameDstFile":"false"
+15:18:44, TRACE: 	"LR_jpeg_quality":"0.6"
+15:18:44, TRACE: 	"thumbGenerate":"true"
+15:18:44, TRACE: 	"LR_tokens":"compleanno_2025"
+15:18:44, TRACE: 	"LR_canExport":"true"
+15:18:44, TRACE: 	"LR_watermarking_id":"<simpleCopyrightWatermark>"
+15:18:44, TRACE: 	"dstRoot":"test"
+15:18:44, TRACE: 	"LR_export_useSubfolder":"true"
+15:18:44, TRACE: 	"useSecondAddress":"false"
+15:18:44, TRACE: 	"LR_DNG_compressed":"true"
+15:18:44, TRACE: 	"LR_outputSharpeningOn":"false"
+15:18:44, TRACE: 	"LR_renamingTokensOn":"false"
+15:18:44, TRACE: 	"LR_embeddedMetadataOption":"allExceptCameraInfo"
+15:18:44, TRACE: 	"LR_publish_connectionName":"gennaro_Archivio"
+15:18:44, TRACE: 	"addVideoMed":"None"
+15:18:44, TRACE: 	"orgVideoForceConv":"false"
+15:18:44, TRACE: 	"copyTree":"false"
+15:18:44, TRACE: 	"LR_publishedCollectionInfo":{
+15:18:44, TRACE: 		"parents":"table: 0xaa0fca1c0"
+15:18:44, TRACE: 		"isDefaultCollection":"false"
+15:18:44, TRACE: 		"name":"test"
+15:18:44, TRACE: 		"remoteId":"1935"
+15:18:44, TRACE: 	}
+15:18:44, TRACE: 	"addVideoLow":"None"
+15:18:44, TRACE: 	"storeDstRoot":"true"
+15:18:44, TRACE: 	"LR_collisionHandling":"ask"
+15:18:44, TRACE: 	"LR_export_videoPreset":"SIZE_max"
+15:18:44, TRACE: 	"LR_size_doNotEnlarge":"false"
+15:18:44, TRACE: 	"servername2":""
+15:18:44, TRACE: 	"LR_includeFaceTagsInIptc":"false"
+15:18:44, TRACE: 	"addVideoUltra":"None"
+15:18:44, TRACE: 	"LR_reimport_stackWithOriginal":"true"
+15:18:44, TRACE: 	"LR_export_destinationPathSuffix":"Esportazione senza titolo"
+15:18:44, TRACE: 	"locationTagField4":"{LrFM:city}"
+15:18:44, TRACE: 	"LR_outputSharpeningMedia":"screen"
+15:18:44, TRACE: 	"psPath":"/?launchApp=SYNO.Foto.AppInstance#/personal_space/"
+15:18:44, TRACE: 	"password":"***"
+15:18:44, TRACE: 	"LR_jpeg_useLimitSize":"false"
+15:18:44, TRACE: 	"srcRoot":""
+15:18:44, TRACE: 	"LR_exportServiceProviderTitle":"Photo StatLr"
+15:18:44, TRACE: 	"LR_size_maxHeight":"1000"
+15:18:44, TRACE: 	"LR_isExportForPublish":"true"
+15:18:44, TRACE: 	"serverTimeout2":"10"
+15:18:44, TRACE: 	"logLevel":"5"
+15:18:44, TRACE: 	"LR_DNG_embedRAW":"false"
+15:18:44, TRACE: 	"xlatLocationTags":"false"
+15:18:44, TRACE: 	"LR_size_doConstrain":"false"
+15:18:44, TRACE: 	"createDstRoot":"true"
+15:18:44, TRACE: 	"LR_useWatermark":"false"
+15:18:44, TRACE: 	"addVideoHigh":"None"
+15:18:44, TRACE: 	"LR_export_videoFileHandling":"include"
+15:18:44, TRACE: 	"LR_jxl_losslessQuality":"false"
+15:18:44, TRACE: 	"exifXlatFaceRegions":"false"
+15:18:44, TRACE: 	"LR_jxl_quality":"0.7"
+15:18:44, TRACE: 	"psUrl":"http://192.168.10.250:5000/?launchApp=SYNO.Foto.AppInstance#/personal_space/"
+15:18:44, TRACE: 	"exifXlatLabel":"false"
+15:18:44, TRACE: 	"proto":"http"
+15:18:44, TRACE: 	"exifTranslate":"false"
+15:18:44, TRACE: 	"exifXlatRating":"false"
+15:18:44, TRACE: 	"LR_includeFaceTagsAsKeywords":"false"
+15:18:44, TRACE: 	"LR_maximumCompatibility":"true"
+15:18:44, TRACE: 	"psVersion":"78"
+15:18:44, TRACE: 	"LR_removeLocationMetadata":"false"
+15:18:44, TRACE: 	"LR_tokenCustomString":""
+15:18:44, TRACE: 	"LR_format":"JPEG"
+15:18:44, TRACE: 	"LR_jpeg_limitSize":"100"
+15:18:44, TRACE: 	"LR_enableHDRDisplay":"false"
+15:18:44, TRACE: 	"serverTimeout":"10"
+15:18:44, TRACE: 	"LR_outputSharpeningLevel":"2"
+15:18:44, TRACE: 	"thumbSharpness":"MED"
+15:18:44, TRACE: 	"LR_tiff_preserveTransparency":"false"
+15:18:44, TRACE: 	"thumbQuality":"80"
+15:18:44, TRACE: 	"RAWandJPG":"false"
+15:18:44, TRACE: 	"useOtp":"false"
+15:18:44, TRACE: 	"LR_size_maxWidth":"1000"
+15:18:44, TRACE: 	"LR_extensionCase":"lowercase"
+15:18:44, TRACE: 	"locationTagTemplate":""
+15:18:44, TRACE: 	"LR_size_resolutionUnits":"inch"
+15:18:44, TRACE: 	"LR_removeFaceMetadata":"false"
+15:18:44, TRACE: 	"locationTagField3":"{LrFM:stateProvince}"
+15:18:44, TRACE: 	"LR_DNG_embedCache":"true"
+15:18:44, TRACE: 	"LR_avif_quality":"0.7"
+15:18:44, TRACE: 	"LR_export_bitDepth":"8"
+15:18:44, TRACE: 	"LR_reimportExportedPhoto":"false"
+15:18:44, TRACE: 	"personalPSOwner":"gennaro_Archivio"
+15:18:44, TRACE: 	"LR_reimport_stackWithOriginal_position":"below"
+15:18:44, TRACE: 	"orgVideoQuality":"3"
+15:18:44, TRACE: 	"locationTagField1":"{LrFM:isoCountryCode}"
+15:18:44, TRACE: 	"LR_export_videoFormat":"4e49434b-4832-3634-fbfb-fbfbfbfbfbfb"
+15:18:44, TRACE: 	"LR_export_postProcessing":"doNothing"
+15:18:44, TRACE: 	"uploadTimestamp":"capture"
+15:18:44, TRACE: 	"sortPhotos":"false"
+15:18:44, TRACE: 	"usePersonalPS":"true"
+15:18:44, TRACE: 	"LR_size_units":"pixels"
+15:18:44, TRACE: 	"LR_includeVideoFiles":"true"
+15:18:44, TRACE: 	"hardRotate":"false"
+15:18:44, TRACE: 	"LR_export_colorSpace":"sRGB"
+15:18:44, TRACE: 	"dstFilename":""
+15:18:44, TRACE: 	"publishMode":"Publish"
+15:18:44, TRACE: 	"LR_tiff_compressionMethod":"compressionMethod_None"
+15:18:44, TRACE: 	"username":"gennaro_Archivio"
+15:18:44, TRACE: 	"LR_size_resizeType":"wh"
+15:18:44, TRACE: 	"LR_export_destinationType":"desktop"
+15:18:44, TRACE: }
+15:18:44, INFO : processRenderedPhotos(mode: Publish).
+15:18:44, INFO : --------------------------------------------------------------------
+15:18:45, TRACE: --------------------------------------------------------------------
+15:18:45, TRACE: Next photo: /var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/B4C684D8-F2C6-40EC-A468-5E8A0AD90041/_MG_9840.jpg
+15:18:45, XDBUG: PSLrUtilities.leafName(/Users/lorenzo/Pictures/foto_per_test/_MG_9840.JPG) returns _MG_9840.JPG
+15:18:45, XDBUG: PSLrUtilities.leafName(/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/B4C684D8-F2C6-40EC-A468-5E8A0AD90041/_MG_9840.jpg) returns _MG_9840.jpg
+15:18:45, XDBUG: PSLrUtilities.extension(_MG_9840.jpg) returns 'jpg'
+15:18:45, TRACE: getPhotoPluginMetaLinkedSharedAlbums(/Users/lorenzo/Pictures/foto_per_test/_MG_9840.JPG): Shared Albums plugin metadata: ''
+15:18:45, DEBUG: removePhotoPluginMetaLinkedSharedAlbumForCollection(/Users/lorenzo/Pictures/foto_per_test/_MG_9840.JPG, {}): removing all Shared Albums for colletion '1935'
+15:18:45, TRACE: evaluatePlaceholderString(photo '_MG_9840.JPG', path 'test', type 'path')
+15:18:45, XDBUG: PSLrUtilities.removeExtension(_MG_9840.JPG) returns _MG_9840
+15:18:45, XDBUG: PSLrUtilities.addExtension(_MG_9840, jpg) returns _MG_9840.jpg
+15:18:45, XDBUG: PSLrUtilities.addExtension(_MG_9840.JPG, jpg) returns _MG_9840.jpg
+15:18:45, XDBUG: PSLrUtilities.removeExtension(_MG_9840.JPG) returns _MG_9840
+15:18:45, XDBUG: PSLrUtilities.addExtension(_MG_9840, jpg) returns _MG_9840.jpg
+15:18:45, DEBUG:   sanitized dstRoot: 'test', dstFilename '_MG_9840.jpg'
+15:18:45, XDBUG: PSLrUtilities.parent(/Users/lorenzo/Pictures/foto_per_test/_MG_9840.JPG) returns /Users/lorenzo/Pictures/foto_per_test
+15:18:45, XDBUG: PSLrUtilities.extension(/Users/lorenzo/Pictures/foto_per_test/_MG_9840.JPG) returns 'JPG'
+15:18:45, XDBUG: PSLrUtilities.child(/Users/lorenzo/Pictures/foto_per_test, _MG_9840.jpg) returns /Users/lorenzo/Pictures/foto_per_test/_MG_9840.jpg
+15:18:45, XDBUG: PSLrUtilities.extension(_MG_9840.jpg) returns 'jpg'
+15:18:45, XDBUG: PSLrUtilities.leafName(/Users/lorenzo/Pictures/foto_per_test/_MG_9840.jpg) returns _MG_9840.jpg
+15:18:45, TRACE: getPublishPath('/Users/lorenzo/Pictures/foto_per_test/_MG_9840.JPG', jpg, Flat, 'test')
+    returns '_MG_9840.jpg', 'test/_MG_9840.jpg'
+15:18:45, TRACE: Old publishedPhotoId: '<Nil>', New publishedPhotoId: 'test/_MG_9840.jpg'
+15:18:45, XDBUG: PSLrUtilities.leafName(test/_MG_9840.jpg) returns _MG_9840.jpg
+15:18:45, TRACE:   createTree: Src Path: ./test from: . to: 
+15:18:45, DEBUG:   createTree: dstDir is: test
+15:18:45, XDBUG: getFolderId(userid:gennaro_Archivio, path:'/test') ...
+15:18:45, XDBUG: pathIdCacheGetEntry(userid:gennaro_Archivio, path:'/test', 'folder', wantsInfo:nil)...
+15:18:45, XDBUG: PSLrUtilities.parent(/test) returns /
+15:18:45, XDBUG: PSLrUtilities.leafName(/test) returns test
+15:18:45, DEBUG: pathIdCacheGetEntry(userid:gennaro_Archivio, path:'/test'): cache update required ... 
+15:18:45, DEBUG: Photos_API: LrHttp.post(url='http://192.168.10.250:5000/webapi/entry.cgi', API=SYNO.Foto.Browse.Folder params='offset=0&version=1&limit=2000&additional=[]&id=519&method=list&api=SYNO.Foto.Browse.Folder&sort_direction=asc')
+15:18:45, DEBUG: Got Body:
+{"data":{"list":[{"additional":{},"id":537,"name":"/test","owner_user_id":3,"parent":519,"passphrase":"","shared":false,"sort_by":"default","sort_direction":"default"}]},"success":true}
+15:18:45, XDBUG: Got Body(full):
+{"data":{"list":[{"additional":{},"id":537,"name":"/test","owner_user_id":3,"parent":519,"passphrase":"","shared":false,"sort_by":"default","sort_direction":"default"}]},"success":true}
+15:18:45, TRACE: Photos_listFolderSubfolders('/', '519') returns 1 items
+15:18:45, XDBUG: "functionName('Photos_listFolderSubfolders', '/'):
+":{
+15:18:45, XDBUG: 	"1":{
+15:18:45, XDBUG: 		"sort_by":"default"
+15:18:45, XDBUG: 		"shared":"false"
+15:18:45, XDBUG: 		"additional":"table: 0xaa0f87a40"
+15:18:45, XDBUG: 		"parent":"519"
+15:18:45, XDBUG: 		"passphrase":""
+15:18:45, XDBUG: 		"name":"/test"
+15:18:45, XDBUG: 		"owner_user_id":"3"
+15:18:45, XDBUG: 		"sort_direction":"default"
+15:18:45, XDBUG: 		"id":"537"
+15:18:45, XDBUG: 	}
+15:18:45, XDBUG: }
+15:18:45, DEBUG: pathIdCacheGetEntry(userid:gennaro_Archivio, path:'/test') listSubfolders found 1 subfolders in '/'
+15:18:45, XDBUG: PSLrUtilities.leafName(/test) returns test
+15:18:45, TRACE: getFolderId(userid:gennaro_Archivio, path:'/test') returns '537' from cache
+15:18:45, TRACE: getDateTimeOriginal():	dateTimeOriginal found 
+15:18:45, TRACE: 	dateTimeOriginal: 2014-01-01 00:03:51
+15:18:45, XDBUG: PSLrUtilities.parent(/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/B4C684D8-F2C6-40EC-A468-5E8A0AD90041/_MG_9840.jpg) returns /var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/B4C684D8-F2C6-40EC-A468-5E8A0AD90041
+15:18:45, XDBUG: PSLrUtilities.leafName(/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/B4C684D8-F2C6-40EC-A468-5E8A0AD90041/_MG_9840.jpg) returns _MG_9840.jpg
+15:18:45, XDBUG: PSLrUtilities.removeExtension(_MG_9840.jpg) returns _MG_9840
+15:18:45, XDBUG: PSLrUtilities.addExtension(_MG_9840_XL, jpg) returns _MG_9840_XL.jpg
+15:18:45, XDBUG: PSLrUtilities.child(/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/B4C684D8-F2C6-40EC-A468-5E8A0AD90041, _MG_9840_XL.jpg) returns /var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/B4C684D8-F2C6-40EC-A468-5E8A0AD90041/_MG_9840_XL.jpg
+15:18:45, XDBUG: PSLrUtilities.addExtension(_MG_9840_M, jpg) returns _MG_9840_M.jpg
+15:18:45, XDBUG: PSLrUtilities.child(/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/B4C684D8-F2C6-40EC-A468-5E8A0AD90041, _MG_9840_M.jpg) returns /var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/B4C684D8-F2C6-40EC-A468-5E8A0AD90041/_MG_9840_M.jpg
+15:18:45, XDBUG: PSLrUtilities.addExtension(_MG_9840_S, jpg) returns _MG_9840_S.jpg
+15:18:45, XDBUG: PSLrUtilities.child(/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/B4C684D8-F2C6-40EC-A468-5E8A0AD90041, _MG_9840_S.jpg) returns /var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/B4C684D8-F2C6-40EC-A468-5E8A0AD90041/_MG_9840_S.jpg
+15:18:45, TRACE: "/opt/homebrew/bin/convert" "/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/B4C684D8-F2C6-40EC-A468-5E8A0AD90041/_MG_9840.jpg" \( -clone 0 -define jpeg:size=1280x1280\>^ -thumbnail 1280x1280\>^ -flatten -quality 80 -auto-orient -unsharp 0.5x0.5+1.25+0.0 -write "/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/B4C684D8-F2C6-40EC-A468-5E8A0AD90041/_MG_9840_XL.jpg" \) -delete 0 \( +clone   -define jpeg:size=320x320\>^ -thumbnail 320x320\>^ -flatten -quality 80 -auto-orient -unsharp 0.5x0.5+1.25+0.0 -write "/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/B4C684D8-F2C6-40EC-A468-5E8A0AD90041/_MG_9840_M.jpg" +delete \) -define jpeg:size=240x240\>^ -thumbnail 240x240\>^ -flatten -quality 80 -auto-orient -unsharp 0.5x0.5+1.25+0.0 "/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/B4C684D8-F2C6-40EC-A468-5E8A0AD90041/_MG_9840_S.jpg" 2>> "/var/folders/8t/bvkdb8t13xg26w0q4fn1v2kh0000gn/T/PhotoStatLr.log"
+WARNING: The convert command is deprecated in IMv7, use "magick" instead of "convert" or "magick convert"
+
+15:18:45, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 9 sec
+15:18:46, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 10 sec
+15:18:47, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 11 sec
+15:18:48, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 12 sec
+15:18:49, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 13 sec
+15:18:50, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 14 sec
+15:18:51, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 15 sec
+15:18:52, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 16 sec
+15:18:53, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 17 sec
+15:18:54, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 18 sec
+15:18:55, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 19 sec
+15:18:56, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 20 sec
+15:18:57, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 21 sec
+15:18:58, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 22 sec
+15:18:59, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 23 sec
+15:19:00, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 24 sec
+15:19:01, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 25 sec
+15:19:02, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 26 sec
+15:19:03, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 27 sec
+15:19:04, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 28 sec
+15:19:05, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 29 sec
+15:19:06, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 30 sec
+15:19:07, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 31 sec
+15:19:08, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 32 sec
+15:19:09, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 33 sec
+15:19:10, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 34 sec
+15:19:11, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 35 sec
+15:19:12, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 36 sec
+15:19:13, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 37 sec
+15:19:14, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 38 sec
+15:19:15, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 39 sec
+15:19:16, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 40 sec
+15:19:17, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 41 sec
+15:19:18, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 42 sec
+15:19:19, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 43 sec
+15:19:20, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 44 sec
+15:19:21, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 45 sec
+15:19:22, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 46 sec
+15:19:23, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 47 sec
+15:19:24, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 48 sec
+15:19:25, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 49 sec
+15:19:26, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 50 sec
+15:19:27, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 51 sec
+15:19:28, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 52 sec
+15:19:29, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 53 sec
+15:19:30, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 54 sec
+15:19:31, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 55 sec
+15:19:32, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 56 sec
+15:19:33, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 57 sec
+15:19:34, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 58 sec
+15:19:35, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 59 sec
+15:19:36, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 60 sec
+15:19:37, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 61 sec
+15:19:38, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 62 sec
+15:19:39, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 63 sec
+15:19:40, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 64 sec
+15:19:41, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 65 sec
+15:19:42, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 66 sec
+15:19:43, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 67 sec
+15:19:44, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 68 sec
+15:19:45, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 69 sec
+15:19:46, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 70 sec
+15:19:47, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 71 sec
+15:19:48, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 72 sec
+15:19:49, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 73 sec
+15:19:50, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 74 sec
+15:19:51, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 75 sec
+15:19:52, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 76 sec
+15:19:53, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 77 sec
+15:19:54, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 78 sec
+15:19:55, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 79 sec
+15:19:56, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 80 sec
+15:19:57, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 81 sec
+15:19:58, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 82 sec
+15:19:59, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 83 sec
+15:20:00, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 84 sec
+15:20:01, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 85 sec
+15:20:02, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 86 sec
+15:20:03, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 87 sec
+15:20:04, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 88 sec
+15:20:05, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 89 sec
+15:20:06, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 90 sec
+15:20:07, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 91 sec
+15:20:08, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 92 sec
+15:20:09, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 93 sec
+15:20:10, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 94 sec
+15:20:11, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 95 sec
+15:20:12, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 96 sec
+15:20:13, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 97 sec
+15:20:14, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 98 sec
+15:20:15, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 99 sec
+15:20:16, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 100 sec
+15:20:17, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 101 sec
+15:20:18, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 102 sec
+15:20:19, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 103 sec
+15:20:20, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 104 sec
+15:20:21, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 105 sec
+15:20:22, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 106 sec
+15:20:23, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 107 sec
+15:20:24, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 108 sec
+15:20:25, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 109 sec
+15:20:26, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 110 sec
+15:20:27, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 111 sec
+15:20:28, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 112 sec
+15:20:29, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 113 sec
+15:20:30, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 114 sec
+15:20:31, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 115 sec
+15:20:32, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 116 sec
+15:20:33, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 117 sec
+15:20:34, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 118 sec
+15:20:35, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 119 sec
+15:20:36, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 120 sec
+15:20:37, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 121 sec
+15:20:38, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 122 sec
+15:20:39, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 123 sec
+15:20:40, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 124 sec
+15:20:41, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 125 sec
+15:20:42, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 126 sec
+15:20:43, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 127 sec
+15:20:44, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 128 sec
+15:20:45, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 129 sec
+15:20:46, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 130 sec
+15:20:47, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 131 sec
+15:20:48, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 132 sec
+15:20:49, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 133 sec
+15:20:50, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 134 sec
+15:20:51, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 135 sec
+15:20:52, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 136 sec
+15:20:53, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 137 sec
+15:20:54, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 138 sec
+15:20:55, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 139 sec
+15:20:56, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 140 sec
+15:20:57, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 141 sec
+15:20:58, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 142 sec
+15:20:59, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 143 sec
+15:21:00, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 144 sec
+15:21:01, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 145 sec
+15:21:02, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 146 sec
+15:21:03, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 147 sec
+15:21:04, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 148 sec
+15:21:05, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 149 sec
+15:21:06, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 150 sec
+15:21:07, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 151 sec
+15:21:08, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 152 sec
+15:21:09, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 153 sec
+15:21:10, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 154 sec
+15:21:11, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 155 sec
+15:21:12, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 156 sec
+15:21:13, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 157 sec
+15:21:14, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 158 sec
+15:21:15, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 159 sec
+15:21:16, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 160 sec
+15:21:17, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 161 sec
+15:21:18, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 162 sec
+15:21:19, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 163 sec
+15:21:20, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 164 sec
+15:21:21, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 165 sec
+15:21:22, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 166 sec
+15:21:23, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 167 sec
+15:21:24, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 168 sec
+15:21:25, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 169 sec
+15:21:26, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 170 sec
+15:21:27, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 171 sec
+15:21:28, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 172 sec
+15:21:29, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 173 sec
+15:21:30, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 174 sec
+15:21:31, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 175 sec
+15:21:32, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 176 sec
+15:21:33, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 177 sec
+15:21:34, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 178 sec
+15:21:35, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 179 sec
+15:21:36, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 180 sec
+15:21:37, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 181 sec
+15:21:38, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 182 sec
+15:21:39, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 183 sec
+15:21:40, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 184 sec
+15:21:41, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 185 sec
+15:21:42, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 186 sec
+15:21:43, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 187 sec
+15:21:44, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 188 sec
+15:21:45, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 189 sec
+15:21:46, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 190 sec
+15:21:47, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 191 sec
+15:21:48, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 192 sec
+15:21:49, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 193 sec
+15:21:50, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 194 sec
+15:21:51, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 195 sec
+15:21:52, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 196 sec
+15:21:53, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 197 sec
+15:21:54, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 198 sec
+15:21:55, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 199 sec
+15:21:56, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 200 sec
+15:21:57, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 201 sec
+15:21:58, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 202 sec
+15:21:59, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 203 sec
+15:22:00, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 204 sec
+15:22:01, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 205 sec
+15:22:02, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 206 sec
+15:22:03, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 207 sec
+15:22:04, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 208 sec
+15:22:05, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 209 sec
+15:22:06, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 210 sec
+15:22:08, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 211 sec
+15:22:09, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 212 sec
+15:22:10, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 213 sec
+15:22:11, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 214 sec
+15:22:12, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 215 sec
+15:22:13, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 216 sec
+15:22:14, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 217 sec
+15:22:15, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 218 sec
+15:22:16, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 219 sec
+15:22:17, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 220 sec
+15:22:18, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 221 sec
+15:22:19, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 222 sec
+15:22:20, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 223 sec
+15:22:21, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 224 sec
+15:22:22, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 225 sec
+15:22:23, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 226 sec
+15:22:24, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 227 sec
+15:22:25, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 228 sec
+15:22:26, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 229 sec
+15:22:27, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 230 sec
+15:22:28, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 231 sec
+15:22:29, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 232 sec
+15:22:30, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 233 sec
+15:22:31, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 234 sec
+15:22:32, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 235 sec
+15:22:33, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 236 sec
+15:22:34, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 237 sec
+15:22:35, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 238 sec
+15:22:36, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 239 sec
+15:22:37, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 240 sec
+15:22:38, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 241 sec
+15:22:39, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 242 sec
+15:22:40, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 243 sec
+15:22:41, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 244 sec
+15:22:42, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 245 sec
+15:22:43, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 246 sec
+15:22:44, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 247 sec
+15:22:45, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 248 sec
+15:22:46, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 249 sec
+15:22:47, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 250 sec
+15:22:48, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 251 sec
+15:22:49, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 252 sec
+15:22:50, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 253 sec
+15:22:51, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 254 sec
+15:22:52, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 255 sec
+15:22:53, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 256 sec
+15:22:54, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 257 sec
+15:22:55, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 258 sec
+15:22:56, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 259 sec
+15:22:57, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 260 sec
+15:22:58, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 261 sec
+15:22:59, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 262 sec
+15:23:00, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 263 sec
+15:23:01, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 264 sec
+15:23:02, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 265 sec
+15:23:03, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 266 sec
+15:23:04, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 267 sec
+15:23:05, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 268 sec
+15:23:06, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 269 sec
+15:23:07, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 270 sec
+15:23:08, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 271 sec
+15:23:09, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 272 sec
+15:23:10, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 273 sec
+15:23:11, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 274 sec
+15:23:12, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 275 sec
+15:23:13, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 276 sec
+15:23:14, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 277 sec
+15:23:15, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 278 sec
+15:23:16, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 279 sec
+15:23:17, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 280 sec
+15:23:18, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 281 sec
+15:23:19, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 282 sec
+15:23:20, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 283 sec
+15:23:21, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 284 sec
+15:23:22, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 285 sec
+15:23:23, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 286 sec
+15:23:24, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 287 sec
+15:23:25, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 288 sec
+15:23:26, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 289 sec
+15:23:27, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 290 sec
+15:23:28, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 291 sec
+15:23:29, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 292 sec
+15:23:30, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 293 sec
+15:23:31, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 294 sec
+15:23:32, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 295 sec
+15:23:33, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 296 sec
+15:23:34, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 297 sec
+15:23:35, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 298 sec
+15:23:36, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 299 sec
+15:23:37, TRACE: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is occupied by '_MG_9840.jpg' since 300 sec
+15:23:37, ERROR: waitSemaphore('_MG_9840.jpg'): 'PhotoServer' is blocked by '_MG_9840.jpg' since 300 sec! Please, restart Lr if it this is not going to end!
+15:23:37, XDBUG: PSLrUtilities.child(test, _MG_9840.jpg) returns test/_MG_9840.jpg
+15:23:37, ERROR: Upload of '/Users/lorenzo/Pictures/foto_per_test/_MG_9840.JPG' to 'test/_MG_9840.jpg' failed!
+15:23:37, INFO : PSUtilities.deleteAllEmptyFolders: Deleted 0 empty albums.
+15:23:37, INFO : --------------------------------------------------------------------
+15:23:37, TRACE: closeSession() starting
+15:23:37, TRACE: closeSession() done.
