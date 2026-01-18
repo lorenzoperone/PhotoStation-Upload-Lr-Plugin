@@ -8,11 +8,12 @@
 4. [Setup Iniziale](#setup-iniziale)
 5. [Creare uno Shared Album](#creare-uno-shared-album)
 6. [Configurare la Keyword in Lightroom](#configurare-la-keyword-in-lightroom)
-7. [Pubblicare Foto nello Shared Album](#pubblicare-foto-nello-shared-album)
-8. [Gestire e Modificare Shared Albums](#gestire-e-modificare-shared-albums)
-9. [Best Practices](#best-practices)
-10. [Troubleshooting](#troubleshooting)
-11. [FAQ - Domande Frequenti](#faq---domande-frequenti)
+7. [Configurazione Metadati per Shared Albums](#configurazione-metadati-per-shared-albums)
+8. [Pubblicare Foto nello Shared Album](#pubblicare-foto-nello-shared-album)
+9. [Gestire e Modificare Shared Albums](#gestire-e-modificare-shared-albums)
+10. [Best Practices](#best-practices)
+11. [Troubleshooting](#troubleshooting)
+12. [FAQ - Domande Frequenti](#faq---domande-frequenti)
 
 ---
 
@@ -302,6 +303,100 @@ Photo StatLr
         ├── vacanze_estate_2024     ← Altri album (se presenti)
         └── famiglia_natale         ← Altri album (se presenti)
 ```
+
+---
+
+## Configurazione Metadati per Shared Albums
+
+### Perché È Importante
+
+Prima di pubblicare foto negli Shared Albums, è fondamentale configurare correttamente i **metadati** nel Publish Service. Questa configurazione determina quali informazioni vengono scritte nei file EXIF/IPTC delle foto pubblicate.
+
+### Accedere alle Impostazioni Metadati
+
+1. Pannello **Publish Services** → Click destro sulla Published Collection
+2. **Publish Settings...** o **Edit Settings...**
+3. Nella sezione **"Metadati"** trovi le opzioni
+
+![Configurazione Metadati](screenshot-metadata-settings.png)
+
+### Configurazione Consigliata per Shared Albums
+
+**Per album condivisi pubblicamente o con clienti:**
+
+```
+Includi: "Copyright, contatti e IPTC"
+
+☑ Rimuovi informazioni della persona
+☑ Rimuovi informazioni posizione
+☐ Scrivi parole chiave come gerarchia Lightroom
+```
+
+#### Spiegazione delle Opzioni
+
+| Opzione | Consiglio | Motivo |
+|---------|-----------|--------|
+| **Includi** | "Copyright, contatti e IPTC" | Proteggi il tuo copyright, mantieni contatti per essere rintracciabile, preserva titoli/descrizioni/keywords utili |
+| **Rimuovi informazioni della persona** | ☑ **SÌ** | Privacy: rimuove nomi di persone taggate e dati face recognition (GDPR compliant) |
+| **Rimuovi informazioni posizione** | ☑ **SÌ** | Sicurezza: rimuove coordinate GPS che rivelano dove abiti/lavori |
+| **Scrivi parole chiave come gerarchia Lightroom** | ☐ **NO** | Evita di scrivere nei metadati la gerarchia completa `Photo StatLr > Shared Albums > <Service>` |
+
+### ⚠️ Importante: "Scrivi parole chiave come gerarchia Lightroom"
+
+**NON attivare** questa opzione se hai spuntato "Esporta le parole chiave madre" sulla keyword dello Shared Album!
+
+**Perché?**
+Se attivi entrambe, le foto esportate avranno nei metadati EXIF:
+```
+Keywords:
+- Photo StatLr
+- Shared Albums
+- gennaro_archivio
+- andrea_shared_album
+```
+
+Queste keywords **non sono dannose**, ma sono **ridondanti e inutili** per chi visualizza le foto. Meglio mantenere solo keywords significative.
+
+### Configurazione Alternativa per Album Familiari Privati
+
+Se l'album è solo per familiari stretti (non pubblico):
+
+```
+Includi: "Tutti i metadati"
+
+☐ Rimuovi informazioni della persona
+☐ Rimuovi informazioni posizione
+☐ Scrivi parole chiave come gerarchia Lightroom
+```
+
+In questo modo la famiglia può:
+- Vedere dove sono state scattate le foto (GPS sulla mappa)
+- Riconoscere le persone taggate (face tags)
+- Avere metadati completi
+
+### Opzioni del Dropdown "Includi"
+
+| Opzione | Quando Usarla |
+|---------|---------------|
+| **Copyright, contatti e IPTC** | ✅ **Consigliato per Shared Albums pubblici** - Proteggi copyright, mantieni contatti, preserva keywords/titoli |
+| **Tutti i metadati** | Per album privati familiari - Include GPS, face tags, EXIF completo |
+| **Tutto tranne informazioni fotocamera** | Se non vuoi rivelare la tua attrezzatura (rischio furto) |
+| **Solo copyright** | Minimo assoluto - solo protezione copyright |
+
+### Considerazioni Privacy (GDPR)
+
+Per conformità GDPR quando condividi foto pubblicamente:
+
+✅ **Devi rimuovere:**
+- 📍 **GPS**: Coordinate geografiche (rivela indirizzi di casa/lavoro)
+- 👤 **Face tags**: Nomi di persone riconosciute (dati biometrici sensibili)
+- 📧 **Email personali**: Se presenti nei metadati contatto
+
+✅ **Puoi mantenere:**
+- © **Copyright**: Protezione legale del tuo lavoro
+- 📝 **Titoli/Descrizioni**: Informazioni descrittive della foto
+- 🏷️ **Keywords**: Parole chiave per categorizzazione
+- 📸 **EXIF tecnico**: Impostazioni fotocamera (ISO, apertura, tempo) - opzionale
 
 ---
 
