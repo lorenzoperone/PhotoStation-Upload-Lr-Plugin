@@ -157,7 +157,7 @@ Se il metodo automatico non funziona:
 2. Menu in alto: **Library → Plug-in Extras → Manage Shared Albums**
 3. Si apre il dialog di gestione degli Shared Albums
 
-<img src="screenshot-manage-shared-albums.png" alt="Dialog Manage Shared Albums" width="100%" style="max-width: 1600px;">
+<img src="../Screenshots-Mac/screenshot-manage-shared-albums.png" alt="Dialog Manage Shared Albums" width="100%" style="max-width: 1600px;">
 
 ### Configurazione dello Shared Album
 
@@ -236,7 +236,7 @@ Dopo aver creato lo Shared Album nel dialog manager, devi creare la keyword corr
 3. Click destro su `<Nome Publish Service>` → **Create Keyword Tag**
 4. Si apre il dialog "Modifica tag parola chiave"
 
-![Dialog Modifica Keyword](screenshot-keyword-settings.png)
+![Dialog Modifica Keyword](../Screenshots-Mac/screenshot-keyword-settings.png)
 
 ### Configurazione della Keyword
 
@@ -318,7 +318,7 @@ Prima di pubblicare foto negli Shared Albums, è fondamentale configurare corret
 2. **Publish Settings...** o **Edit Settings...**
 3. Nella sezione **"Metadati"** trovi le opzioni
 
-![Configurazione Metadati](screenshot-metadata-settings.png)
+![Configurazione Metadati](../Screenshots-Mac/screenshot-metadata-settings.png)
 
 ### Configurazione Consigliata per Shared Albums
 

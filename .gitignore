@@ -63,3 +63,9 @@ Temporary Items
 My*
 
 Documentation/API
+
+# ============
+# Temporary screenshots
+# ============
+Screenshot*.png
+Documentation/*.html
