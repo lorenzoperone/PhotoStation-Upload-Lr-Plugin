@@ -47,6 +47,16 @@ Gli **Shared Albums** (Album Condivisi) in Synology Photos sono collezioni virtu
 - ✅ Photo StatLr Plugin 5.0+
 - ✅ Synology Photos 1.0+ o Photo Station 6.6+
 
+**⚠️ Differenze tra Photo Station e Synology Photos:**
+
+| Feature | Photo Station 6.7-6.8 | Synology Photos 1.0-1.8 |
+|---------|----------------------|------------------------|
+| **Shared Albums Base** | ✅ Completamente supportato | ✅ Completamente supportato |
+| **Opzioni Avanzate** (From, Area Tool, Comments, Color Labels) | ✅ Disponibili | ❌ **Non disponibili** |
+| **Stato del Software** | ⚠️ Deprecato da Synology | ✅ Software attuale |
+
+**Nota**: Synology ha deprecato Photo Station in favore di Synology Photos. Le opzioni avanzate degli Shared Albums sono disponibili solo con Photo Station 6.7+, ma non vale la pena tornare indietro per queste funzionalità.
+
 ### Configurazione Iniziale
 
 1. **Publish Service Configurato**: Devi avere già configurato un Publish Service di Photo StatLr
@@ -168,14 +178,18 @@ Nel dialog "**Edit Shared Album**" (sezione superiore):
 | **Password** | Password per accedere all'album pubblico | Testo libero | Usa password sicura (es: `temp2024!`) |
 | **Until** | Data di scadenza della condivisione | YYYY-MM-DD | Es: `2026-12-31` |
 
-#### Opzioni Avanzate
+#### Opzioni Avanzate ⚠️
 
-| Opzione | Descrizione |
-|---------|-------------|
-| **From** | Data di inizio condivisione (raramente usato) |
-| **Color Labels** | Quali color labels sono visibili (🟥🟨🟩🟦🟪) |
-| **Comments** | Abilita/disabilita commenti pubblici |
-| **Area Tool** | Abilita/disabilita area tool per tagging |
+**IMPORTANTE**: Le opzioni avanzate sono disponibili **SOLO** con Photo Station 6.7+ e **NON** con Synology Photos.
+
+| Opzione | Descrizione | Disponibilità |
+|---------|-------------|---------------|
+| **From** | Data di inizio condivisione (raramente usato) | ❌ Photo Station 6.7+ solo |
+| **Color Labels** | Quali color labels sono visibili (🟥🟨🟩🟦🟪) | ❌ Photo Station 6.7+ solo |
+| **Comments** | Abilita/disabilita commenti pubblici | ❌ Photo Station 6.7+ solo |
+| **Area Tool** | Abilita/disabilita area tool per tagging | ❌ Photo Station 6.7+ solo |
+
+**Con Synology Photos** (tutte le versioni 1.0-1.8), queste opzioni **non sono visibili** nel dialog e non possono essere configurate dal plugin.
 
 ### Esempio di Configurazione Sicura
 
