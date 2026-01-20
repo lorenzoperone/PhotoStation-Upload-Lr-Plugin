@@ -32,6 +32,12 @@ The shared album disappears from the extra plugin window immediately after being
 - Synology Photos/Photo Station: (please specify version if needed)
 - Operating System: MacBook Pro M3 Pro OSX 26.2.0.25C56
 
-## Additional Notes
 
-Let me know if you need more details or logs. Thanks again for your support!
+## Log
+```
+...
+19:04:07, DEBUG: PSSharedAlbumDialog.doDialogTask
+19:04:07, DEBUG: PSSharedAlbumDialog.doDialog
+19:04:07, TRACE: readSharedAlbumsFromLr: publish service 'gennaro_Archivio': psVersion: 78
+19:04:07, TRACE: getKeywordByPath('Photo StatLr|Shared Albums|gennaro_Archivio', create: <nil>, include: <nil>): 'gennaro_Archivio' does not exist, returning nil
+‘‘‘
