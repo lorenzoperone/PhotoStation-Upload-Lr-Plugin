@@ -22,6 +22,7 @@ The shared album disappears from the extra plugin window immediately after being
 
 - Screenshot 2026-01-20 alle 19.03.33.png
 - Screenshot 2026-01-20 alle 19.03.48.png
+- Screenshot 2026-01-20 alle 19.03.53.png
 - Screenshot 2026-01-20 alle 19.04.16.png
 
 ## Software Versions
